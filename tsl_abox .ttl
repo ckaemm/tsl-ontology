@@ -1,0 +1,581 @@
+@prefix : <http://example.org/tsl-ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# =============================================================================
+# LEAGUE & SEASON
+# =============================================================================
+
+:TurkishSuperLig
+    a :League ;
+    rdfs:label "Trendyol Super Lig"@en ;
+    :leagueCountry "Turkey" .
+
+:Season_2025_2026
+    a :Season ;
+    rdfs:label "2025-2026 Season"@en ;
+    :seasonYear "2025-2026" ;
+    :seasonOfLeague :TurkishSuperLig .
+
+# =============================================================================
+# STADIUMS
+# =============================================================================
+
+:RamsPark
+    a :Stadium ;
+    rdfs:label "Rams Park"@en ;
+    :stadiumCapacity 52280 ;
+    :stadiumCity "Istanbul" .
+
+:SukruSaracoglu
+    a :Stadium ;
+    rdfs:label "Sukru Saracoglu Stadium"@en ;
+    :stadiumCapacity 50509 ;
+    :stadiumCity "Istanbul" .
+
+:VodafonePark
+    a :Stadium ;
+    rdfs:label "Vodafone Park"@en ;
+    :stadiumCapacity 41903 ;
+    :stadiumCity "Istanbul" .
+
+:PaparaPark
+    a :Stadium ;
+    rdfs:label "Papara Park"@en ;
+    :stadiumCapacity 41461 ;
+    :stadiumCity "Trabzon" .
+
+# =============================================================================
+# TEAMS
+# =============================================================================
+
+:Galatasaray
+    a :Team ;
+    rdfs:label "Galatasaray SK"@en ;
+    :belongsToLeague :TurkishSuperLig ;
+    :homeStadium :RamsPark .
+
+:Fenerbahce
+    a :Team ;
+    rdfs:label "Fenerbahce SK"@en ;
+    :belongsToLeague :TurkishSuperLig ;
+    :homeStadium :SukruSaracoglu .
+
+:Besiktas
+    a :Team ;
+    rdfs:label "Besiktas JK"@en ;
+    :belongsToLeague :TurkishSuperLig ;
+    :homeStadium :VodafonePark .
+
+:Trabzonspor
+    a :Team ;
+    rdfs:label "Trabzonspor"@en ;
+    :belongsToLeague :TurkishSuperLig ;
+    :homeStadium :PaparaPark .
+
+# External clubs (referenced in transfers)
+:Napoli a :Team ; rdfs:label "SSC Napoli"@en .
+:Benfica a :Team ; rdfs:label "SL Benfica"@en .
+:AlAhli a :Team ; rdfs:label "Al-Ahli Saudi FC"@en .
+:Roma a :Team ; rdfs:label "AS Roma"@en .
+
+# =============================================================================
+# COACHES
+# =============================================================================
+
+:OkanBuruk
+    a :Coach ;
+    rdfs:label "Okan Buruk"@en ;
+    :birthDate "1973-09-19"^^xsd:date ;
+    :nationality "Turkish" ;
+    :manages :Galatasaray .
+
+:DomenicoTedesco
+    a :Coach ;
+    rdfs:label "Domenico Tedesco"@en ;
+    :birthDate "1985-09-12"^^xsd:date ;
+    :nationality "Italian" ;
+    :manages :Fenerbahce .
+
+:SergenYalcin
+    a :Coach ;
+    rdfs:label "Sergen Yalcin"@en ;
+    :birthDate "1972-01-05"^^xsd:date ;
+    :nationality "Turkish" ;
+    :manages :Besiktas .
+
+:SenolGunes
+    a :Coach ;
+    rdfs:label "Senol Gunes"@en ;
+    :birthDate "1952-06-01"^^xsd:date ;
+    :nationality "Turkish" ;
+    :manages :Trabzonspor .
+
+# =============================================================================
+# PLAYERS — GALATASARAY
+# =============================================================================
+
+:VictorOsimhen
+    a :Player ;
+    rdfs:label "Victor Osimhen"@en ;
+    :birthDate "1998-12-29"^^xsd:date ;
+    :nationality "Nigerian" ;
+    :jerseyNumber 45 ;
+    :marketValue 75000000 ;
+    :playsFor :Galatasaray ;
+    :hasPosition :forward_position .
+
+:MauroIcardi
+    a :Player ;
+    rdfs:label "Mauro Icardi"@en ;
+    :birthDate "1993-02-19"^^xsd:date ;
+    :nationality "Argentinian" ;
+    :jerseyNumber 9 ;
+    :marketValue 5000000 ;
+    :playsFor :Galatasaray ;
+    :hasPosition :forward_position .
+
+:BarisAlperYilmaz
+    a :Player ;
+    rdfs:label "Baris Alper Yilmaz"@en ;
+    :birthDate "2000-01-23"^^xsd:date ;
+    :nationality "Turkish" ;
+    :jerseyNumber 53 ;
+    :marketValue 26000000 ;
+    :playsFor :Galatasaray ;
+    :hasPosition :midfielder_position .
+
+:LeroySane
+    a :Player ;
+    rdfs:label "Leroy Sane"@en ;
+    :birthDate "1996-01-11"^^xsd:date ;
+    :nationality "German" ;
+    :jerseyNumber 10 ;
+    :marketValue 22000000 ;
+    :playsFor :Galatasaray ;
+    :hasPosition :forward_position .
+
+:GabrielSara
+    a :Player ;
+    rdfs:label "Gabriel Sara"@en ;
+    :birthDate "1999-06-26"^^xsd:date ;
+    :nationality "Brazilian" ;
+    :jerseyNumber 20 ;
+    :marketValue 22000000 ;
+    :playsFor :Galatasaray ;
+    :hasPosition :midfielder_position .
+
+:FernandoMuslera
+    a :Player ;
+    rdfs:label "Fernando Muslera"@en ;
+    :birthDate "1986-06-16"^^xsd:date ;
+    :nationality "Uruguayan" ;
+    :jerseyNumber 1 ;
+    :playsFor :Galatasaray ;
+    :hasPosition :goalkeeper_position .
+
+:DavinsonSanchez
+    a :Player ;
+    rdfs:label "Davinson Sanchez"@en ;
+    :birthDate "1996-06-12"^^xsd:date ;
+    :nationality "Colombian" ;
+    :jerseyNumber 6 ;
+    :marketValue 18000000 ;
+    :playsFor :Galatasaray ;
+    :hasPosition :defender_position .
+
+# =============================================================================
+# PLAYERS — FENERBAHCE
+# =============================================================================
+
+:AndersonTalisca
+    a :Player ;
+    rdfs:label "Anderson Talisca"@en ;
+    :birthDate "1994-01-01"^^xsd:date ;
+    :nationality "Brazilian" ;
+    :jerseyNumber 20 ;
+    :marketValue 8000000 ;
+    :playsFor :Fenerbahce ;
+    :hasPosition :forward_position .
+
+:MarcoAsensio
+    a :Player ;
+    rdfs:label "Marco Asensio"@en ;
+    :birthDate "1996-01-21"^^xsd:date ;
+    :nationality "Spanish" ;
+    :jerseyNumber 11 ;
+    :marketValue 15000000 ;
+    :playsFor :Fenerbahce ;
+    :hasPosition :midfielder_position .
+
+:NGoloKante
+    a :Player ;
+    rdfs:label "N'Golo Kante"@en ;
+    :birthDate "1991-03-29"^^xsd:date ;
+    :nationality "French" ;
+    :jerseyNumber 7 ;
+    :marketValue 10000000 ;
+    :playsFor :Fenerbahce ;
+    :hasPosition :midfielder_position .
+
+:KeremAkturkoglu
+    a :Player ;
+    rdfs:label "Kerem Akturkoglu"@en ;
+    :birthDate "1998-10-21"^^xsd:date ;
+    :nationality "Turkish" ;
+    :jerseyNumber 17 ;
+    :marketValue 20000000 ;
+    :playsFor :Fenerbahce ;
+    :hasPosition :forward_position .
+
+:Ederson
+    a :Player ;
+    rdfs:label "Ederson"@en ;
+    :birthDate "1999-07-07"^^xsd:date ;
+    :nationality "Brazilian" ;
+    :jerseyNumber 1 ;
+    :playsFor :Fenerbahce ;
+    :hasPosition :goalkeeper_position .
+
+:MilanSkriniar
+    a :Player ;
+    rdfs:label "Milan Skriniar"@en ;
+    :birthDate "1995-02-11"^^xsd:date ;
+    :nationality "Slovak" ;
+    :jerseyNumber 37 ;
+    :marketValue 12000000 ;
+    :playsFor :Fenerbahce ;
+    :hasPosition :defender_position .
+
+# =============================================================================
+# PLAYERS — BESIKTAS
+# =============================================================================
+
+:OrkunKokcu
+    a :Player ;
+    rdfs:label "Orkun Kokcu"@en ;
+    :birthDate "2000-12-29"^^xsd:date ;
+    :nationality "Turkish" ;
+    :jerseyNumber 10 ;
+    :marketValue 25000000 ;
+    :playsFor :Besiktas ;
+    :hasPosition :midfielder_position .
+
+:TammyAbraham
+    a :Player ;
+    rdfs:label "Tammy Abraham"@en ;
+    :birthDate "1997-10-02"^^xsd:date ;
+    :nationality "English" ;
+    :jerseyNumber 9 ;
+    :marketValue 18000000 ;
+    :playsFor :Besiktas ;
+    :hasPosition :forward_position .
+
+:CengizUnder
+    a :Player ;
+    rdfs:label "Cengiz Under"@en ;
+    :birthDate "1997-07-14"^^xsd:date ;
+    :nationality "Turkish" ;
+    :jerseyNumber 77 ;
+    :marketValue 8000000 ;
+    :playsFor :Besiktas ;
+    :hasPosition :forward_position .
+
+:WilfredNdidi
+    a :Player ;
+    rdfs:label "Wilfred Ndidi"@en ;
+    :birthDate "1996-12-16"^^xsd:date ;
+    :nationality "Nigerian" ;
+    :jerseyNumber 4 ;
+    :marketValue 10000000 ;
+    :playsFor :Besiktas ;
+    :hasPosition :midfielder_position .
+
+:ElBilalToure
+    a :Player ;
+    rdfs:label "El Bilal Toure"@en ;
+    :birthDate "2001-09-03"^^xsd:date ;
+    :nationality "Malian" ;
+    :jerseyNumber 11 ;
+    :marketValue 12000000 ;
+    :playsFor :Besiktas ;
+    :hasPosition :forward_position .
+
+:DevisVasquez
+    a :Player ;
+    rdfs:label "Devis Vasquez"@en ;
+    :birthDate "1998-02-12"^^xsd:date ;
+    :nationality "Colombian" ;
+    :jerseyNumber 13 ;
+    :playsFor :Besiktas ;
+    :hasPosition :goalkeeper_position .
+
+:EmmanuelAgbadou
+    a :Player ;
+    rdfs:label "Emmanuel Agbadou"@en ;
+    :birthDate "1997-08-15"^^xsd:date ;
+    :nationality "Ivorian" ;
+    :jerseyNumber 5 ;
+    :marketValue 8000000 ;
+    :playsFor :Besiktas ;
+    :hasPosition :defender_position .
+
+# =============================================================================
+# PLAYERS — TRABZONSPOR
+# =============================================================================
+
+:AnthonyNwakaeme
+    a :Player ;
+    rdfs:label "Anthony Nwakaeme"@en ;
+    :birthDate "1989-03-21"^^xsd:date ;
+    :nationality "Nigerian" ;
+    :jerseyNumber 10 ;
+    :marketValue 1500000 ;
+    :playsFor :Trabzonspor ;
+    :hasPosition :forward_position .
+
+:ErnestMuci
+    a :Player ;
+    rdfs:label "Ernest Muci"@en ;
+    :birthDate "2001-03-19"^^xsd:date ;
+    :nationality "Albanian" ;
+    :jerseyNumber 7 ;
+    :marketValue 8000000 ;
+    :playsFor :Trabzonspor ;
+    :hasPosition :forward_position .
+
+:UgurcanCakir
+    a :Player ;
+    rdfs:label "Ugurcan Cakir"@en ;
+    :birthDate "1996-04-05"^^xsd:date ;
+    :nationality "Turkish" ;
+    :jerseyNumber 1 ;
+    :marketValue 12000000 ;
+    :playsFor :Trabzonspor ;
+    :hasPosition :goalkeeper_position .
+
+# =============================================================================
+# MATCHES (2025-2026 Season — sample data for demonstration)
+# =============================================================================
+
+:Match_GS_FB_W12
+    a :Match ;
+    rdfs:label "Galatasaray vs Fenerbahce - Week 12"@en ;
+    :homeTeam :Galatasaray ;
+    :awayTeam :Fenerbahce ;
+    :playedAtStadium :RamsPark ;
+    :matchDate "2025-11-09"^^xsd:date ;
+    :matchWeek 12 ;
+    :inSeason :Season_2025_2026 ;
+    :homeScore 2 ;
+    :awayScore 1 .
+
+:Match_TS_FB_W22
+    a :Match ;
+    rdfs:label "Trabzonspor vs Fenerbahce - Week 22"@en ;
+    :homeTeam :Trabzonspor ;
+    :awayTeam :Fenerbahce ;
+    :playedAtStadium :PaparaPark ;
+    :matchDate "2026-02-14"^^xsd:date ;
+    :matchWeek 22 ;
+    :inSeason :Season_2025_2026 ;
+    :homeScore 2 ;
+    :awayScore 3 .
+
+:Match_BJK_GS_W8
+    a :Match ;
+    rdfs:label "Besiktas vs Galatasaray - Week 8"@en ;
+    :homeTeam :Besiktas ;
+    :awayTeam :Galatasaray ;
+    :playedAtStadium :VodafonePark ;
+    :matchDate "2025-10-19"^^xsd:date ;
+    :matchWeek 8 ;
+    :inSeason :Season_2025_2026 ;
+    :homeScore 1 ;
+    :awayScore 2 .
+
+:Match_GS_FB_W31
+    a :Match ;
+    rdfs:label "Galatasaray vs Fenerbahce - Week 31"@en ;
+    :homeTeam :Galatasaray ;
+    :awayTeam :Fenerbahce ;
+    :playedAtStadium :RamsPark ;
+    :matchDate "2026-04-26"^^xsd:date ;
+    :matchWeek 31 ;
+    :inSeason :Season_2025_2026 ;
+    :homeScore 3 ;
+    :awayScore 0 .
+
+# =============================================================================
+# GOALS
+# =============================================================================
+
+:Goal_1_GS_FB_W12
+    a :Goal ;
+    rdfs:label "Osimhen goal vs Fenerbahce (18')"@en ;
+    :scoredBy :VictorOsimhen ;
+    :assistedBy :BarisAlperYilmaz ;
+    :goalInMatch :Match_GS_FB_W12 ;
+    :goalForTeam :Galatasaray ;
+    :goalMinute 18 ;
+    :isOwnGoal false ;
+    :isPenalty false .
+
+:Goal_2_GS_FB_W12
+    a :Goal ;
+    rdfs:label "Sane goal vs Fenerbahce (72')"@en ;
+    :scoredBy :LeroySane ;
+    :goalInMatch :Match_GS_FB_W12 ;
+    :goalForTeam :Galatasaray ;
+    :goalMinute 72 ;
+    :isOwnGoal false ;
+    :isPenalty false .
+
+:Goal_3_GS_FB_W12
+    a :Goal ;
+    rdfs:label "Talisca goal vs Galatasaray (55')"@en ;
+    :scoredBy :AndersonTalisca ;
+    :goalInMatch :Match_GS_FB_W12 ;
+    :goalForTeam :Fenerbahce ;
+    :goalMinute 55 ;
+    :isOwnGoal false ;
+    :isPenalty false .
+
+:Goal_1_TS_FB_W22
+    a :Goal ;
+    rdfs:label "Muci goal vs Fenerbahce (12')"@en ;
+    :scoredBy :ErnestMuci ;
+    :goalInMatch :Match_TS_FB_W22 ;
+    :goalForTeam :Trabzonspor ;
+    :goalMinute 12 ;
+    :isOwnGoal false ;
+    :isPenalty false .
+
+:Goal_2_TS_FB_W22
+    a :Goal ;
+    rdfs:label "Talisca goal at Trabzon (33')"@en ;
+    :scoredBy :AndersonTalisca ;
+    :goalInMatch :Match_TS_FB_W22 ;
+    :goalForTeam :Fenerbahce ;
+    :goalMinute 33 ;
+    :isOwnGoal false ;
+    :isPenalty false .
+
+:Goal_1_BJK_GS_W8
+    a :Goal ;
+    rdfs:label "Kokcu goal vs Galatasaray (28')"@en ;
+    :scoredBy :OrkunKokcu ;
+    :assistedBy :TammyAbraham ;
+    :goalInMatch :Match_BJK_GS_W8 ;
+    :goalForTeam :Besiktas ;
+    :goalMinute 28 ;
+    :isOwnGoal false ;
+    :isPenalty false .
+
+:Goal_2_BJK_GS_W8
+    a :Goal ;
+    rdfs:label "Osimhen goal at Besiktas (41')"@en ;
+    :scoredBy :VictorOsimhen ;
+    :goalInMatch :Match_BJK_GS_W8 ;
+    :goalForTeam :Galatasaray ;
+    :goalMinute 41 ;
+    :isOwnGoal false ;
+    :isPenalty true .
+
+:Goal_3_BJK_GS_W8
+    a :Goal ;
+    rdfs:label "Sara goal at Besiktas (89')"@en ;
+    :scoredBy :GabrielSara ;
+    :goalInMatch :Match_BJK_GS_W8 ;
+    :goalForTeam :Galatasaray ;
+    :goalMinute 89 ;
+    :isOwnGoal false ;
+    :isPenalty false .
+
+:Goal_1_GS_FB_W31
+    a :Goal ;
+    rdfs:label "Osimhen goal vs Fenerbahce W31 (22')"@en ;
+    :scoredBy :VictorOsimhen ;
+    :goalInMatch :Match_GS_FB_W31 ;
+    :goalForTeam :Galatasaray ;
+    :goalMinute 22 ;
+    :isOwnGoal false ;
+    :isPenalty false .
+
+# =============================================================================
+# CARDS
+# =============================================================================
+
+:Card_1_GS_FB_W12
+    a :YellowCard ;
+    rdfs:label "Kante yellow card (38')"@en ;
+    :cardShownTo :NGoloKante ;
+    :cardInMatch :Match_GS_FB_W12 ;
+    :cardMinute 38 ;
+    :cardReason "Foul" .
+
+:Card_2_BJK_GS_W8
+    a :YellowCard ;
+    rdfs:label "Ndidi yellow card (65')"@en ;
+    :cardShownTo :WilfredNdidi ;
+    :cardInMatch :Match_BJK_GS_W8 ;
+    :cardMinute 65 ;
+    :cardReason "Unsporting behavior" .
+
+:Card_3_TS_FB_W22
+    a :RedCard ;
+    rdfs:label "Nwakaeme red card (78')"@en ;
+    :cardShownTo :AnthonyNwakaeme ;
+    :cardInMatch :Match_TS_FB_W22 ;
+    :cardMinute 78 ;
+    :cardReason "Second yellow card" .
+
+# =============================================================================
+# TRANSFERS
+# =============================================================================
+
+:Transfer_Osimhen_GS
+    a :Transfer ;
+    rdfs:label "Osimhen permanent transfer to Galatasaray"@en ;
+    :transferPlayer :VictorOsimhen ;
+    :transferredFrom :Napoli ;
+    :transferredTo :Galatasaray ;
+    :transferDate "2025-07-14"^^xsd:date ;
+    :transferFee 75000000 ;
+    :inSeason :Season_2025_2026 ;
+    :isLoan false .
+
+:Transfer_Kokcu_BJK
+    a :Transfer ;
+    rdfs:label "Orkun Kokcu loan to Besiktas"@en ;
+    :transferPlayer :OrkunKokcu ;
+    :transferredFrom :Benfica ;
+    :transferredTo :Besiktas ;
+    :transferDate "2025-07-11"^^xsd:date ;
+    :transferFee 0 ;
+    :inSeason :Season_2025_2026 ;
+    :isLoan true .
+
+:Transfer_Talisca_FB
+    a :Transfer ;
+    rdfs:label "Talisca transfer to Fenerbahce"@en ;
+    :transferPlayer :AndersonTalisca ;
+    :transferredFrom :AlAhli ;
+    :transferredTo :Fenerbahce ;
+    :transferDate "2025-07-01"^^xsd:date ;
+    :transferFee 5000000 ;
+    :inSeason :Season_2025_2026 ;
+    :isLoan false .
+
+:Transfer_Abraham_BJK
+    a :Transfer ;
+    rdfs:label "Tammy Abraham loan to Besiktas"@en ;
+    :transferPlayer :TammyAbraham ;
+    :transferredFrom :Roma ;
+    :transferredTo :Besiktas ;
+    :transferDate "2025-07-01"^^xsd:date ;
+    :transferFee 0 ;
+    :inSeason :Season_2025_2026 ;
+    :isLoan true .

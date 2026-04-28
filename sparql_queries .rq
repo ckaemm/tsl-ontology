@@ -1,0 +1,129 @@
+PREFIX : <http://example.org/tsl-ontology#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# =============================================================================
+# CQ1: Which players currently play for a given team?
+# Example: Galatasaray roster
+# =============================================================================
+
+SELECT ?player ?playerName ?jerseyNumber WHERE {
+    ?player a :Player ;
+            :playsFor :Galatasaray ;
+            rdfs:label ?playerName .
+    OPTIONAL { ?player :jerseyNumber ?jerseyNumber . }
+}
+ORDER BY ?jerseyNumber
+
+# Expected: Muslera (#1), Icardi (#9), Baris Alper (#17)
+
+
+# =============================================================================
+# CQ2: How many goals did a specific player score in a given season?
+# Example: Icardi in 2025-2026
+# =============================================================================
+
+SELECT ?playerName (COUNT(?goal) AS ?totalGoals) WHERE {
+    ?goal a :Goal ;
+          :scoredBy :MauroIcardi ;
+          :goalInMatch ?match .
+    ?match :inSeason :Season_2025_2026 .
+    :MauroIcardi rdfs:label ?playerName .
+}
+GROUP BY ?playerName
+
+# Expected: Mauro Icardi — 3 goals
+
+
+# =============================================================================
+# CQ3: What is the capacity of a given stadium and which team plays there?
+# =============================================================================
+
+SELECT ?teamName ?stadiumName ?capacity WHERE {
+    ?team a :Team ;
+          rdfs:label ?teamName ;
+          :homeStadium ?stadium .
+    ?stadium rdfs:label ?stadiumName ;
+             :stadiumCapacity ?capacity .
+}
+ORDER BY DESC(?capacity)
+
+# Expected: Turk Telekom (52695), Rams Park (52280), Sukru Saracoglu (50509), etc.
+
+
+# =============================================================================
+# CQ4: Which players were transferred from one specific club to another?
+# Example: Transfers to Galatasaray
+# =============================================================================
+
+SELECT ?playerName ?fromTeam ?toTeam ?transferDate ?fee WHERE {
+    ?transfer a :Transfer ;
+              :transferPlayer ?player ;
+              :transferredFrom ?from ;
+              :transferredTo ?to ;
+              :transferDate ?transferDate .
+    ?player rdfs:label ?playerName .
+    ?from rdfs:label ?fromTeam .
+    ?to rdfs:label ?toTeam .
+    OPTIONAL { ?transfer :transferFee ?fee . }
+    FILTER(?to = :Galatasaray)
+}
+
+# Expected: Icardi from Fenerbahce to Galatasaray
+
+
+# =============================================================================
+# CQ5: Which players received a red or yellow card in a specific match?
+# Example: GS vs FB Week 10
+# =============================================================================
+
+SELECT ?playerName ?cardType ?minute ?reason WHERE {
+    ?card :cardInMatch :Match_GS_FB_W12 ;
+          :cardShownTo ?player ;
+          :cardMinute ?minute .
+    ?player rdfs:label ?playerName .
+    OPTIONAL { ?card :cardReason ?reason . }
+    BIND(
+        IF(EXISTS { ?card a :RedCard }, "Red Card",
+        IF(EXISTS { ?card a :YellowCard }, "Yellow Card", "Unknown"))
+        AS ?cardType
+    )
+}
+
+# Expected: Dzeko — Yellow Card (40')
+
+
+# =============================================================================
+# CQ6: Who is the head coach of a given team in a specific season?
+# =============================================================================
+
+SELECT ?teamName ?coachName WHERE {
+    ?team a :Team ;
+          rdfs:label ?teamName ;
+          :managedBy ?coach .
+    ?coach rdfs:label ?coachName .
+}
+
+# Expected: Galatasaray — Okan Buruk, Fenerbahce — Jose Mourinho
+
+
+# =============================================================================
+# CQ7: What are all the matches played in a given season week (hafta)?
+# Example: Week 10 of 2025-2026
+# =============================================================================
+
+SELECT ?matchLabel ?homeTeamName ?awayTeamName ?homeScore ?awayScore ?matchDate WHERE {
+    ?match a :Match ;
+           rdfs:label ?matchLabel ;
+           :matchWeek 10 ;
+           :inSeason :Season_2025_2026 ;
+           :homeTeam ?home ;
+           :awayTeam ?away ;
+           :matchDate ?matchDate ;
+           :homeScore ?homeScore ;
+           :awayScore ?awayScore .
+    ?home rdfs:label ?homeTeamName .
+    ?away rdfs:label ?awayTeamName .
+}
+
+# Expected: Galatasaray vs Fenerbahce — 3:1 (2024-11-03)
