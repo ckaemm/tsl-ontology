@@ -63,7 +63,7 @@ This ontology provides a structured knowledge model for querying and reasoning a
 
 ## Authors
 
-- Cemil and Group Members
+- Cemil,Murat and Göktuğ
 
 ## License
 
