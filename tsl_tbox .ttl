@@ -331,7 +331,12 @@
 # --- Property Chain Axiom ---
 # If a goal is scored by a player, and that player plays for a team,
 # then we can infer the goal is for that team.
-# :goalForTeam owl:propertyChainAxiom ( :scoredBy :playsFor ) .
+# --- Property Chain Axioms ---
+# Derste ogrendigimiz gibi, property chain axiom'lar cikarimlari otomatiklestirir.
+# Eger bir gol bir oyuncu tarafindan atildiysa ve o oyuncu bir takimda oynuyorsa,
+# o gol o takimin goludir.
+
+:goalForTeam owl:propertyChainAxiom ( :scoredBy :playsFor ) .
 
 # =============================================================================
 # DATA PROPERTIES
@@ -494,6 +499,82 @@
     rdfs:comment "The country where the league is based."@en ;
     rdfs:domain :League ;
     rdfs:range xsd:string .
+
+# =============================================================================
+# STANDING CLASS (Puan Tablosu)
+# =============================================================================
+
+:Standing
+    a owl:Class ;
+    rdfs:label "Standing"@en ;
+    rdfs:comment "A team's position and statistics in the league standings for a specific season."@en .
+
+# --- Standing Object Properties ---
+
+:standingTeam
+    a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label "standing team"@en ;
+    rdfs:comment "The team this standing record belongs to."@en ;
+    rdfs:domain :Standing ;
+    rdfs:range :Team .
+
+:standingSeason
+    a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label "standing season"@en ;
+    rdfs:comment "The season this standing record belongs to."@en ;
+    rdfs:domain :Standing ;
+    rdfs:range :Season .
+
+# --- Standing Data Properties ---
+
+:position
+    a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:label "position"@en ;
+    rdfs:comment "The final league position of the team (1 = champion)."@en ;
+    rdfs:domain :Standing ;
+    rdfs:range xsd:integer .
+
+:points
+    a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:label "points"@en ;
+    rdfs:comment "Total points accumulated in the season."@en ;
+    rdfs:domain :Standing ;
+    rdfs:range xsd:integer .
+
+:wins
+    a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:label "wins"@en ;
+    rdfs:comment "Number of matches won."@en ;
+    rdfs:domain :Standing ;
+    rdfs:range xsd:integer .
+
+:draws
+    a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:label "draws"@en ;
+    rdfs:comment "Number of matches drawn."@en ;
+    rdfs:domain :Standing ;
+    rdfs:range xsd:integer .
+
+:losses
+    a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:label "losses"@en ;
+    rdfs:comment "Number of matches lost."@en ;
+    rdfs:domain :Standing ;
+    rdfs:range xsd:integer .
+
+:goalsFor
+    a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:label "goals for"@en ;
+    rdfs:comment "Total goals scored by the team in the season."@en ;
+    rdfs:domain :Standing ;
+    rdfs:range xsd:integer .
+
+:goalsAgainst
+    a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:label "goals against"@en ;
+    rdfs:comment "Total goals conceded by the team in the season."@en ;
+    rdfs:domain :Standing ;
+    rdfs:range xsd:integer .
 
 # =============================================================================
 # NAMED INDIVIDUALS (Position Instances)

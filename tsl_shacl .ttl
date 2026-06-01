@@ -455,3 +455,56 @@ g:PlayerGoalCheckShape
             }
         """
     ] .
+
+
+# =============================================================================
+# STANDING SHAPE (Puan Tablosu)
+# =============================================================================
+# Her standing kaydinin bir takimi, sezonu, sirasi ve puani olmali.
+# Sira 1-20 arasi, puan 0-120 arasi olmali.
+
+g:StandingShape
+    a sh:NodeShape ;
+    sh:targetClass :Standing ;
+    sh:property [
+        sh:path :standingTeam ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class :Team ;
+        sh:message "Standing kaydinin bir takimi olmali." ;
+        sh:severity sh:Violation
+    ] ;
+    sh:property [
+        sh:path :standingSeason ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class :Season ;
+        sh:message "Standing kaydinin bir sezonu olmali." ;
+        sh:severity sh:Violation
+    ] ;
+    sh:property [
+        sh:path :position ;
+        sh:minCount 1 ;
+        sh:datatype xsd:integer ;
+        sh:minInclusive 1 ;
+        sh:maxInclusive 20 ;
+        sh:message "Siralama 1-20 arasinda olmali." ;
+        sh:severity sh:Violation
+    ] ;
+    sh:property [
+        sh:path :points ;
+        sh:minCount 1 ;
+        sh:datatype xsd:integer ;
+        sh:minInclusive 0 ;
+        sh:maxExclusive 120 ;
+        sh:message "Puan 0-120 arasinda olmali." ;
+        sh:severity sh:Violation
+    ] ;
+    sh:property [
+        sh:path :wins ;
+        sh:minCount 1 ;
+        sh:datatype xsd:integer ;
+        sh:minInclusive 0 ;
+        sh:message "Galibiyet sayisi negatif olamaz." ;
+        sh:severity sh:Violation
+    ] .
