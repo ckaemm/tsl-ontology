@@ -1,0 +1,510 @@
+# Turkish Super Lig Football Ontology - SHACL Shapes
+# Bu dosya ontolojimizin veri kalitesini kontrol etmek icin yazildi.
+# Derste ogrendigimiz SHACL yapilarini kullandik:
+#   - Node Shape & Property Shape
+#   - Cardinality (minCount, maxCount)
+#   - Value Range (minInclusive, maxExclusive)
+#   - Severity levels (Violation, Warning, Info)
+#   - Qualified Value Shapes
+#   - SPARQL constraint
+#   - Logical operators (sh:not)
+
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://example.org/tsl-ontology#> .
+@prefix g: <http://example.org/tsl-shacl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# =============================================================================
+# PLAYER SHAPE
+# =============================================================================
+# Her oyuncunun mutlaka bir takimi, bir pozisyonu ve bir milliyeti olmali.
+# Jersey numarasi 1-99 arasinda olmali.
+
+g:PlayerShape
+    a sh:NodeShape ;
+    sh:targetClass :Player ;
+    sh:property g:PlayerTeamShape ;
+    sh:property g:PlayerPositionShape ;
+    sh:property [
+        sh:path :nationality ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "Oyuncunun milliyeti belirtilmeli." ;
+        sh:severity sh:Violation ;
+        sh:deactivated false
+    ] ;
+    sh:property [
+        sh:path :jerseyNumber ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:integer ;
+        sh:minInclusive 1 ;
+        sh:maxInclusive 99 ;
+        sh:message "Forma numarasi 1 ile 99 arasinda olmali." ;
+        sh:severity sh:Violation ;
+        sh:deactivated false
+    ] ;
+    sh:property [
+        sh:path :birthDate ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:date ;
+        sh:message "Oyuncunun dogum tarihi olmali." ;
+        sh:severity sh:Violation ;
+        sh:deactivated false
+    ] ;
+    # piyasa degeri 100 milyondan fazla olursa uyari versin
+    sh:property [
+        sh:path :marketValue ;
+        sh:maxExclusive 100000000 ;
+        sh:message "Piyasa degeri 100 milyon Euro'yu gecmemeli (gercekten bu kadar mi?)." ;
+        sh:severity sh:Warning ;
+        sh:deactivated false
+    ] .
+
+# Named property shape - tekrar kullanilabilir (derste ogrendigimiz gibi)
+g:PlayerTeamShape
+    a sh:PropertyShape ;
+    sh:path :playsFor ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:class :Team ;
+    sh:message "Her oyuncu tam olarak bir takimda oynamali." ;
+    sh:severity sh:Violation ;
+    sh:deactivated false .
+
+g:PlayerPositionShape
+    a sh:PropertyShape ;
+    sh:path :hasPosition ;
+    sh:minCount 1 ;
+    sh:class :Position ;
+    sh:message "Oyuncunun en az bir pozisyonu olmali." ;
+    sh:severity sh:Violation ;
+    sh:deactivated false .
+
+
+# =============================================================================
+# TEAM SHAPE
+# =============================================================================
+# Her takimin bir stadyumu ve en az bir oyuncusu olmali.
+# NOT: ABox'ta Napoli, Roma gibi external takimlar da :Team olarak tanimli
+# ama onlarin lig ve stadyum bilgisi yok. Bu yuzden homeStadium ve 
+# belongsToLeague icin Warning kullandik - sadece Super Lig takimlari 
+# icin gercekten onemli.
+
+g:TeamShape
+    a sh:NodeShape ;
+    sh:targetClass :Team ;
+    sh:property [
+        sh:path :homeStadium ;
+        sh:maxCount 1 ;
+        sh:class :Stadium ;
+        sh:message "Takimin bir ic saha stadyumu olmasi beklenir." ;
+        sh:severity sh:Warning ;
+        sh:deactivated false
+    ] ;
+    sh:property [
+        sh:path :belongsToLeague ;
+        sh:class :League ;
+        sh:message "Takimin bir lige ait olmasi beklenir." ;
+        sh:severity sh:Warning ;
+        sh:deactivated false
+    ] ;
+    # managedBy zorunlu degil cunku bazi external takimlarin (Napoli, Roma vs.) 
+    # coach bilgisi ABox'ta yok, o yuzden bunu Warning yaptik
+    sh:property [
+        sh:path :managedBy ;
+        sh:maxCount 1 ;
+        sh:class :Coach ;
+        sh:message "Takimin bir teknik direktoru olmasi beklenir." ;
+        sh:severity sh:Warning ;
+        sh:deactivated false
+    ] .
+
+
+# =============================================================================
+# MATCH SHAPE
+# =============================================================================
+# Macin iki takimi (home & away), bir stadyumu, tarihi ve haftasi olmali.
+# Skor 0'dan kucuk olamaz, 20'den buyuk olamaz (mantikli bir sinir).
+
+g:MatchShape
+    a sh:NodeShape ;
+    sh:targetClass :Match ;
+    sh:property [
+        sh:path :homeTeam ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class :Team ;
+        sh:message "Macin bir ev sahibi takimi olmali." ;
+        sh:severity sh:Violation
+    ] ;
+    sh:property [
+        sh:path :awayTeam ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class :Team ;
+        sh:message "Macin bir deplasman takimi olmali." ;
+        sh:severity sh:Violation
+    ] ;
+    sh:property [
+        sh:path :playedAtStadium ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class :Stadium ;
+        sh:message "Mac bir stadyumda oynanmali." ;
+        sh:severity sh:Violation
+    ] ;
+    sh:property [
+        sh:path :matchDate ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:date ;
+        sh:message "Mac tarihi belirtilmeli." ;
+        sh:severity sh:Violation
+    ] ;
+    sh:property [
+        sh:path :matchWeek ;
+        sh:minCount 1 ;
+        sh:datatype xsd:integer ;
+        sh:minInclusive 1 ;
+        sh:maxInclusive 38 ;
+        sh:message "Hafta numarasi 1-38 arasinda olmali." ;
+        sh:severity sh:Violation
+    ] ;
+    sh:property [
+        sh:path :homeScore ;
+        sh:minCount 1 ;
+        sh:datatype xsd:integer ;
+        sh:minInclusive 0 ;
+        sh:maxExclusive 20 ;
+        sh:message "Ev sahibi skoru 0-19 arasinda olmali." ;
+        sh:severity sh:Violation
+    ] ;
+    sh:property [
+        sh:path :awayScore ;
+        sh:minCount 1 ;
+        sh:datatype xsd:integer ;
+        sh:minInclusive 0 ;
+        sh:maxExclusive 20 ;
+        sh:message "Deplasman skoru 0-19 arasinda olmali." ;
+        sh:severity sh:Violation
+    ] ;
+    sh:property [
+        sh:path :inSeason ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class :Season ;
+        sh:message "Mac bir sezona ait olmali." ;
+        sh:severity sh:Violation
+    ] .
+
+
+# =============================================================================
+# GOAL SHAPE
+# =============================================================================
+# Her golun bir oyuncusu, bir maci ve bir dakikasi olmali.
+# Gol dakikasi 1-120 arasinda olmali (uzatmalar dahil).
+
+g:GoalShape
+    a sh:NodeShape ;
+    sh:targetClass :Goal ;
+    sh:property [
+        sh:path :scoredBy ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class :Player ;
+        sh:message "Golu atan oyuncu belirtilmeli." ;
+        sh:severity sh:Violation ;
+        sh:deactivated false
+    ] ;
+    sh:property [
+        sh:path :goalInMatch ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class :Match ;
+        sh:message "Golun hangi macta atildigi belirtilmeli." ;
+        sh:severity sh:Violation ;
+        sh:deactivated false
+    ] ;
+    sh:property [
+        sh:path :goalMinute ;
+        sh:minCount 1 ;
+        sh:datatype xsd:integer ;
+        sh:minInclusive 1 ;
+        sh:maxInclusive 120 ;
+        sh:message "Gol dakikasi 1-120 arasinda olmali." ;
+        sh:severity sh:Violation
+    ] ;
+    # asist bilgisi her zaman olmayabilir, o yuzden sadece Info seviyesinde
+    sh:property [
+        sh:path :assistedBy ;
+        sh:maxCount 1 ;
+        sh:class :Player ;
+        sh:message "Bu golde asist bilgisi girilmemis." ;
+        sh:severity sh:Info ;
+        sh:deactivated true
+    ] .
+
+
+# =============================================================================
+# CARD SHAPE
+# =============================================================================
+
+g:CardShape
+    a sh:NodeShape ;
+    sh:targetClass :Card ;
+    sh:property [
+        sh:path :cardShownTo ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class :Player ;
+        sh:message "Kartin gosterildigi oyuncu belirtilmeli." ;
+        sh:severity sh:Violation
+    ] ;
+    sh:property [
+        sh:path :cardInMatch ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class :Match ;
+        sh:message "Kartin hangi macta gosterildigi belirtilmeli." ;
+        sh:severity sh:Violation
+    ] ;
+    sh:property [
+        sh:path :cardMinute ;
+        sh:minCount 1 ;
+        sh:datatype xsd:integer ;
+        sh:minInclusive 1 ;
+        sh:maxInclusive 120 ;
+        sh:message "Kart dakikasi 1-120 arasinda olmali." ;
+        sh:severity sh:Violation
+    ] .
+
+
+# =============================================================================
+# STADIUM SHAPE
+# =============================================================================
+# Stadyum kapasitesi 0'dan buyuk ve 110000'den kucuk olmali.
+
+g:StadiumShape
+    a sh:NodeShape ;
+    sh:targetClass :Stadium ;
+    sh:property [
+        sh:path :stadiumCapacity ;
+        sh:minCount 1 ;
+        sh:datatype xsd:integer ;
+        sh:minInclusive 1 ;
+        sh:maxExclusive 110000 ;
+        sh:message "Stadyum kapasitesi 1 ile 110000 arasinda olmali." ;
+        sh:severity sh:Violation
+    ] ;
+    sh:property [
+        sh:path :stadiumCity ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "Stadyumun bulundugu sehir belirtilmeli." ;
+        sh:severity sh:Violation
+    ] .
+
+
+# =============================================================================
+# TRANSFER SHAPE
+# =============================================================================
+
+g:TransferShape
+    a sh:NodeShape ;
+    sh:targetClass :Transfer ;
+    sh:property [
+        sh:path :transferPlayer ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class :Player ;
+        sh:message "Transfer edilen oyuncu belirtilmeli." ;
+        sh:severity sh:Violation
+    ] ;
+    sh:property [
+        sh:path :transferredFrom ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class :Team ;
+        sh:message "Oyuncunun geldigi takim belirtilmeli." ;
+        sh:severity sh:Violation
+    ] ;
+    sh:property [
+        sh:path :transferredTo ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class :Team ;
+        sh:message "Oyuncunun gittigi takim belirtilmeli." ;
+        sh:severity sh:Violation
+    ] ;
+    sh:property [
+        sh:path :transferDate ;
+        sh:minCount 1 ;
+        sh:datatype xsd:date ;
+        sh:message "Transfer tarihi belirtilmeli." ;
+        sh:severity sh:Violation
+    ] ;
+    # transfer ucreti negatif olamaz
+    # NOT: TBox'ta xsd:decimal tanimladik ama ABox'ta integer degerler girdik.
+    # Burada datatype kontrolu kaldirdik, sadece deger kontrolu yapiyoruz.
+    sh:property [
+        sh:path :transferFee ;
+        sh:minInclusive 0 ;
+        sh:message "Transfer ucreti negatif olamaz." ;
+        sh:severity sh:Violation
+    ] .
+
+
+# =============================================================================
+# NOT OPERATORU ILE CONSTRAINT (dersten)
+# =============================================================================
+# "Bir takimin oyuncusu olmamasi mumkun degildir" 
+# yani her takimin en az bir oyuncusu olmali.
+# Bunu sh:not ile yaziyoruz - derste ogrendigimiz gibi.
+# NOT: Bu sadece Super Lig takimlari icin gecerli, 
+# external takimlarda (Napoli vs.) oyuncu olmayabilir.
+# O yuzden targetClass yerine targetNode kullandik.
+
+# NOT: Derste ogrendigimiz sh:not operatorunu burada gostermek istedik.
+# "Bir takimin sifir oyuncusu olmasi OLMAMALI" = "en az 1 oyuncu olmali"
+# Ama pyshacl'da sh:not icinde maxCount kullaninca hata veriyor,
+# bu yuzden ayni mantigi minCount ile de yazabildik.
+# Asagida her iki versiyonu da biraktik.
+
+# Versiyon 1: sh:not ile (SHACL Play'de calisir ama pyshacl'da sorun cikariyor)
+# g:TeamMustHavePlayerShapeNOT
+#     a sh:NodeShape ;
+#     sh:targetNode :Galatasaray, :Fenerbahce, :Besiktas, :Trabzonspor ;
+#     sh:property [
+#         sh:path [ sh:inversePath :playsFor ] ;
+#         sh:not [
+#             sh:maxCount 0
+#         ] ;
+#         sh:message "Super Lig takiminin en az bir oyuncusu olmali (NOT ile)." ;
+#         sh:severity sh:Violation
+#     ] .
+
+# Versiyon 2: minCount ile (ayni mantik, pyshacl uyumlu)
+g:TeamMustHavePlayerShape
+    a sh:NodeShape ;
+    sh:targetNode :Galatasaray, :Fenerbahce, :Besiktas, :Trabzonspor ;
+    sh:property [
+        sh:path [ sh:inversePath :playsFor ] ;
+        sh:minCount 1 ;
+        sh:message "Super Lig takiminin en az bir oyuncusu olmali." ;
+        sh:severity sh:Violation ;
+        sh:deactivated false
+    ] .
+
+
+# =============================================================================
+# QUALIFIED VALUE SHAPE (dersten)
+# =============================================================================
+# Her macta en az 1 golun ev sahibi takimin oyuncusu tarafindan atilmis
+# olmasi beklenir (ama zorunlu degil, 0-0 bitebilir). 
+# Bu yuzden severity Info olarak ayarladik.
+# Burada qualifiedValueShape kullandik - derste ogrendigimiz 
+# "en az N tanesi bu shape'e uysin" mantigi.
+
+# NOT: Bunu deactivated yaptik cunku 0-0 biten maclarda violation verir
+# ama yine de yapiyi gostermek icin biraktik.
+
+g:MatchShouldHaveGoalShape
+    a sh:NodeShape ;
+    sh:targetClass :Match ;
+    sh:property [
+        sh:path [ sh:inversePath :goalInMatch ] ;
+        sh:qualifiedValueShape [
+            sh:property [
+                sh:path :goalMinute ;
+                sh:minCount 1
+            ]
+        ] ;
+        sh:qualifiedMinCount 1 ;
+        sh:message "Macta en az bir gol beklenir (Info seviyesinde)." ;
+        sh:severity sh:Info ;
+        sh:deactivated true
+    ] .
+
+
+# =============================================================================
+# SPARQL CONSTRAINT (dersten - advanced topic)
+# =============================================================================
+# Bir oyuncunun ayni macta 5'ten fazla gol atmasi suphelidir.
+# Veri giris hatasi olabilir. SPARQL ile kontrol ediyoruz.
+
+g:PlayerGoalCheckShape
+    a sh:NodeShape ;
+    sh:targetClass :Player ;
+    sh:sparql [
+        sh:message "Bir oyuncu ayni macta 5'ten fazla gol atmis gorunuyor - veri hatasi olabilir." ;
+        sh:severity sh:Warning ;
+        sh:select """
+            SELECT $this WHERE {
+                {
+                    SELECT $this ?match (COUNT(?goal) AS ?goalCount)
+                    WHERE {
+                        ?goal :scoredBy $this ;
+                              :goalInMatch ?match .
+                    }
+                    GROUP BY $this ?match
+                }
+                FILTER(?goalCount > 5)
+            }
+        """
+    ] .
+
+
+# =============================================================================
+# STANDING SHAPE (Puan Tablosu)
+# =============================================================================
+# Her standing kaydinin bir takimi, sezonu, sirasi ve puani olmali.
+# Sira 1-20 arasi, puan 0-120 arasi olmali.
+
+g:StandingShape
+    a sh:NodeShape ;
+    sh:targetClass :Standing ;
+    sh:property [
+        sh:path :standingTeam ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class :Team ;
+        sh:message "Standing kaydinin bir takimi olmali." ;
+        sh:severity sh:Violation
+    ] ;
+    sh:property [
+        sh:path :standingSeason ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class :Season ;
+        sh:message "Standing kaydinin bir sezonu olmali." ;
+        sh:severity sh:Violation
+    ] ;
+    sh:property [
+        sh:path :position ;
+        sh:minCount 1 ;
+        sh:datatype xsd:integer ;
+        sh:minInclusive 1 ;
+        sh:maxInclusive 20 ;
+        sh:message "Siralama 1-20 arasinda olmali." ;
+        sh:severity sh:Violation
+    ] ;
+    sh:property [
+        sh:path :points ;
+        sh:minCount 1 ;
+        sh:datatype xsd:integer ;
+        sh:minInclusive 0 ;
+        sh:maxExclusive 120 ;
+        sh:message "Puan 0-120 arasinda olmali." ;
+        sh:severity sh:Violation
+    ] ;
+    sh:property [
+        sh:path :wins ;
+        sh:minCount 1 ;
+        sh:datatype xsd:integer ;
+        sh:minInclusive 0 ;
+        sh:message "Galibiyet sayisi negatif olamaz." ;
+        sh:severity sh:Violation
+    ] .
