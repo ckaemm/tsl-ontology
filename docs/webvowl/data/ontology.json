@@ -1,0 +1,1798 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
+  "header" : {
+    "languages" : [ "en", "undefined" ],
+    "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "http://example.org/tsl-ontology", "http://schema.org", "http://www.w3.org/2000/01/rdf-schema", "http://www.w3.org/2001/XMLSchema", "http://xmlns.com/foaf/0.1" ],
+    "title" : {
+      "en" : "Turkish Super Lig Football Ontology"
+    },
+    "iri" : "http://example.org/tsl-ontology",
+    "version" : "1.0.0",
+    "author" : [ "Cemil and Group Members" ],
+    "description" : {
+      "en" : "A formal knowledge model for professional football in the Turkish Super Lig, covering teams, players, matches, goals, cards, transfers, stadiums, and coaching staff."
+    },
+    "other" : {
+      "creator" : [ {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "Cemil and Group Members",
+        "type" : "label"
+      } ],
+      "created" : [ {
+        "identifier" : "created",
+        "language" : "undefined",
+        "value" : "2026-04-28",
+        "type" : "label"
+      } ],
+      "preferredNamespacePrefix" : [ {
+        "identifier" : "preferredNamespacePrefix",
+        "language" : "undefined",
+        "value" : "tsl",
+        "type" : "label"
+      } ],
+      "versionInfo" : [ {
+        "identifier" : "versionInfo",
+        "language" : "undefined",
+        "value" : "1.0.0",
+        "type" : "label"
+      } ],
+      "preferredNamespaceUri" : [ {
+        "identifier" : "preferredNamespaceUri",
+        "language" : "undefined",
+        "value" : "http://example.org/tsl-ontology#",
+        "type" : "label"
+      } ],
+      "title" : [ {
+        "identifier" : "title",
+        "language" : "en",
+        "value" : "Turkish Super Lig Football Ontology",
+        "type" : "label"
+      } ]
+    }
+  },
+  "namespace" : [ ],
+  "class" : [ {
+    "id" : "0",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "10",
+    "type" : "owl:Class"
+  }, {
+    "id" : "12",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "3",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "16",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "15",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "8",
+    "type" : "owl:Class"
+  }, {
+    "id" : "19",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "20",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "22",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "18",
+    "type" : "owl:Class"
+  }, {
+    "id" : "24",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "27",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "31",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "35",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "30",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "36",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "26",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "37",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "38",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "39",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "40",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "42",
+    "type" : "owl:Class"
+  }, {
+    "id" : "43",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "44",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "29",
+    "type" : "owl:Class"
+  }, {
+    "id" : "49",
+    "type" : "owl:Class"
+  }, {
+    "id" : "14",
+    "type" : "owl:Class"
+  }, {
+    "id" : "82",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "11",
+    "type" : "owl:Class"
+  }, {
+    "id" : "90",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "48",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "91",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "65",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "70",
+    "type" : "owl:Class"
+  }, {
+    "id" : "5",
+    "type" : "owl:Class"
+  }, {
+    "id" : "46",
+    "type" : "owl:Class"
+  }, {
+    "id" : "68",
+    "type" : "owl:Class"
+  }, {
+    "id" : "9",
+    "type" : "owl:Class"
+  }, {
+    "id" : "23",
+    "type" : "owl:Class"
+  }, {
+    "id" : "72",
+    "type" : "owl:Class"
+  }, {
+    "id" : "6",
+    "type" : "owl:Class"
+  }, {
+    "id" : "61",
+    "type" : "owl:Class"
+  }, {
+    "id" : "101",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "80",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "55",
+    "type" : "owl:Class"
+  }, {
+    "id" : "63",
+    "type" : "owl:Class"
+  }, {
+    "id" : "60",
+    "type" : "owl:Class"
+  }, {
+    "id" : "53",
+    "type" : "owl:Class"
+  }, {
+    "id" : "2",
+    "type" : "owl:Class"
+  }, {
+    "id" : "85",
+    "type" : "owl:Class"
+  }, {
+    "id" : "57",
+    "type" : "owl:Class"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "0",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://schema.org/StadiumOrArena",
+    "baseIri" : "http://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "StadiumOrArena"
+    },
+    "subClasses" : [ "11" ],
+    "attributes" : [ "external" ],
+    "id" : "10"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "12",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "3",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "16",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#date",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "15",
+    "label" : {
+      "IRI-based" : "date"
+    }
+  }, {
+    "iri" : "http://example.org/tsl-ontology#Season",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Season",
+      "en" : "Season"
+    },
+    "comment" : {
+      "en" : "A specific competitive season within a league, typically spanning one year (e.g., 2024-2025)."
+    },
+    "id" : "8"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "19",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "20",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "22",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://example.org/tsl-ontology#Coach",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Coach",
+      "en" : "Coach"
+    },
+    "comment" : {
+      "en" : "A head coach or manager responsible for leading a team."
+    },
+    "id" : "18",
+    "superClasses" : [ "23" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "24",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "27",
+    "label" : {
+      "IRI-based" : "decimal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "31",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "35",
+    "label" : {
+      "IRI-based" : "boolean"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "30",
+    "label" : {
+      "IRI-based" : "boolean"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "36",
+    "label" : {
+      "IRI-based" : "boolean"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "26",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "37",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "38",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "39",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "40",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://xmlns.com/foaf/0.1/Person",
+    "baseIri" : "http://xmlns.com/foaf/0.1",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Person"
+    },
+    "subClasses" : [ "23" ],
+    "attributes" : [ "external" ],
+    "id" : "42"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "43",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "44",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://example.org/tsl-ontology#Transfer",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Transfer",
+      "en" : "Transfer"
+    },
+    "comment" : {
+      "en" : "A player transfer transaction between two clubs, recording the movement of a player from one team to another."
+    },
+    "id" : "29"
+  }, {
+    "iri" : "http://example.org/tsl-ontology#RedCard",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "RedCard",
+      "en" : "Red Card"
+    },
+    "comment" : {
+      "en" : "A dismissal card shown to a player, resulting in ejection from the match."
+    },
+    "id" : "49",
+    "superClasses" : [ "46" ]
+  }, {
+    "iri" : "http://example.org/tsl-ontology#Match",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Match",
+      "en" : "Match"
+    },
+    "comment" : {
+      "en" : "A competitive football match played between two teams within a league season."
+    },
+    "id" : "14",
+    "superClasses" : [ "57" ]
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "82",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://example.org/tsl-ontology#Stadium",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Stadium",
+      "en" : "Stadium"
+    },
+    "comment" : {
+      "en" : "A sports venue where football matches are played."
+    },
+    "id" : "11",
+    "superClasses" : [ "10" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#date",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "90",
+    "label" : {
+      "IRI-based" : "date"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "48",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "91",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "65",
+    "label" : {
+      "IRI-based" : "decimal"
+    }
+  }, {
+    "iri" : "http://example.org/tsl-ontology#Goalkeeper",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Goalkeeper",
+      "en" : "Goalkeeper"
+    },
+    "individuals" : [ {
+      "iri" : "http://example.org/tsl-ontology#goalkeeper_position",
+      "baseIri" : "http://example.org/tsl-ontology",
+      "comment" : {
+        "en" : "The goalkeeper position."
+      },
+      "labels" : {
+        "IRI-based" : "goalkeeper_position",
+        "en" : "Goalkeeper"
+      }
+    } ],
+    "comment" : {
+      "en" : "The player position responsible for guarding the goal."
+    },
+    "id" : "70",
+    "superClasses" : [ "61" ]
+  }, {
+    "iri" : "http://example.org/tsl-ontology#Goal",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Goal",
+      "en" : "Goal"
+    },
+    "comment" : {
+      "en" : "A goal scored by a player during a match."
+    },
+    "id" : "5",
+    "superClasses" : [ "53" ]
+  }, {
+    "iri" : "http://example.org/tsl-ontology#Card",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Card",
+      "en" : "Card"
+    },
+    "subClasses" : [ "49", "85" ],
+    "comment" : {
+      "en" : "A disciplinary card shown to a player by the referee during a match."
+    },
+    "id" : "46",
+    "superClasses" : [ "53" ]
+  }, {
+    "iri" : "http://example.org/tsl-ontology#Midfielder",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Midfielder",
+      "en" : "Midfielder"
+    },
+    "individuals" : [ {
+      "iri" : "http://example.org/tsl-ontology#midfielder_position",
+      "baseIri" : "http://example.org/tsl-ontology",
+      "comment" : {
+        "en" : "The midfielder position."
+      },
+      "labels" : {
+        "IRI-based" : "midfielder_position",
+        "en" : "Midfielder"
+      }
+    } ],
+    "comment" : {
+      "en" : "A player position that operates in the middle of the field, linking defense and attack."
+    },
+    "id" : "68",
+    "superClasses" : [ "61" ]
+  }, {
+    "iri" : "http://example.org/tsl-ontology#League",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "League",
+      "en" : "League"
+    },
+    "comment" : {
+      "en" : "A professional football league organization that hosts competitive seasons."
+    },
+    "id" : "9"
+  }, {
+    "iri" : "http://example.org/tsl-ontology#Person",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Person",
+      "en" : "Person"
+    },
+    "subClasses" : [ "72", "18" ],
+    "comment" : {
+      "en" : "A human individual involved in professional football."
+    },
+    "id" : "23",
+    "superClasses" : [ "42" ]
+  }, {
+    "iri" : "http://example.org/tsl-ontology#Player",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Player",
+      "en" : "Player"
+    },
+    "comment" : {
+      "en" : "A professional football player who is registered to play for a team."
+    },
+    "id" : "72",
+    "superClasses" : [ "23" ]
+  }, {
+    "iri" : "http://example.org/tsl-ontology#Team",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Team",
+      "en" : "Team"
+    },
+    "comment" : {
+      "en" : "A professional football club that participates in a league."
+    },
+    "id" : "6",
+    "superClasses" : [ "55" ]
+  }, {
+    "iri" : "http://example.org/tsl-ontology#Position",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Position",
+      "en" : "Position"
+    },
+    "subClasses" : [ "63", "60", "70", "68" ],
+    "comment" : {
+      "en" : "A playing position on the football field."
+    },
+    "id" : "61"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "101",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#date",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "80",
+    "label" : {
+      "IRI-based" : "date"
+    }
+  }, {
+    "iri" : "http://schema.org/SportsTeam",
+    "baseIri" : "http://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "SportsTeam"
+    },
+    "subClasses" : [ "6" ],
+    "attributes" : [ "external" ],
+    "id" : "55"
+  }, {
+    "iri" : "http://example.org/tsl-ontology#Forward",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Forward",
+      "en" : "Forward"
+    },
+    "individuals" : [ {
+      "iri" : "http://example.org/tsl-ontology#forward_position",
+      "baseIri" : "http://example.org/tsl-ontology",
+      "comment" : {
+        "en" : "The forward position."
+      },
+      "labels" : {
+        "IRI-based" : "forward_position",
+        "en" : "Forward"
+      }
+    } ],
+    "comment" : {
+      "en" : "A player position primarily responsible for scoring goals."
+    },
+    "id" : "63",
+    "superClasses" : [ "61" ]
+  }, {
+    "iri" : "http://example.org/tsl-ontology#Defender",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Defender",
+      "en" : "Defender"
+    },
+    "individuals" : [ {
+      "iri" : "http://example.org/tsl-ontology#defender_position",
+      "baseIri" : "http://example.org/tsl-ontology",
+      "comment" : {
+        "en" : "The defender position."
+      },
+      "labels" : {
+        "IRI-based" : "defender_position",
+        "en" : "Defender"
+      }
+    } ],
+    "comment" : {
+      "en" : "A player position focused on preventing the opposing team from scoring."
+    },
+    "id" : "60",
+    "superClasses" : [ "61" ]
+  }, {
+    "iri" : "http://example.org/tsl-ontology#MatchEvent",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "MatchEvent",
+      "en" : "Match Event"
+    },
+    "subClasses" : [ "5", "46" ],
+    "comment" : {
+      "en" : "An event that occurs during a football match, such as a goal or a card."
+    },
+    "id" : "53"
+  }, {
+    "iri" : "http://example.org/tsl-ontology#Standing",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Standing",
+      "en" : "Standing"
+    },
+    "comment" : {
+      "en" : "A team's position and statistics in the league standings for a specific season."
+    },
+    "id" : "2"
+  }, {
+    "iri" : "http://example.org/tsl-ontology#YellowCard",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "YellowCard",
+      "en" : "Yellow Card"
+    },
+    "comment" : {
+      "en" : "A caution card shown to a player for a minor foul or unsporting behavior."
+    },
+    "id" : "85",
+    "superClasses" : [ "46" ]
+  }, {
+    "iri" : "http://schema.org/SportsEvent",
+    "baseIri" : "http://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "SportsEvent"
+    },
+    "subClasses" : [ "14" ],
+    "attributes" : [ "external" ],
+    "id" : "57"
+  } ],
+  "property" : [ {
+    "id" : "1",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "4",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "7",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "13",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "17",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "21",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "25",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "28",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "32",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "33",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "34",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "41",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "45",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "47",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "50",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "51",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "52",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "54",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "56",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "58",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "59",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "62",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "64",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "66",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "67",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "69",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "71",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "73",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "74",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "75",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "76",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "77",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "78",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "79",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "81",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "83",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "84",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "86",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "87",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "88",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "89",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "92",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "93",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "94",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "95",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "96",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "97",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "98",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "99",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "100",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "102",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "103",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "105",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "106",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "107",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "108",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "109",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "110",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "111",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "112",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "113",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "114",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "115",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "116",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "117",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "118",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "119",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "120",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "104",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "121",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "122",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "123",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "124",
+    "type" : "owl:objectProperty"
+  } ],
+  "propertyAttribute" : [ {
+    "iri" : "http://example.org/tsl-ontology#position",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "position",
+      "en" : "position"
+    },
+    "domain" : "2",
+    "comment" : {
+      "en" : "The final league position of the team (1 = champion)."
+    },
+    "attributes" : [ "functional", "datatype" ],
+    "id" : "1"
+  }, {
+    "iri" : "http://example.org/tsl-ontology#goalForTeam",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "range" : "6",
+    "label" : {
+      "IRI-based" : "goalForTeam",
+      "en" : "goal for team"
+    },
+    "domain" : "5",
+    "comment" : {
+      "en" : "The team that scored the goal."
+    },
+    "attributes" : [ "functional", "object" ],
+    "id" : "4"
+  }, {
+    "iri" : "http://example.org/tsl-ontology#seasonOfLeague",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "seasonOfLeague",
+      "en" : "season of league"
+    },
+    "domain" : "8",
+    "comment" : {
+      "en" : "Links a season to the league it belongs to."
+    },
+    "attributes" : [ "object" ],
+    "id" : "7"
+  }, {
+    "iri" : "http://example.org/tsl-ontology#matchDate",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "range" : "15",
+    "label" : {
+      "IRI-based" : "matchDate",
+      "en" : "match date"
+    },
+    "domain" : "14",
+    "comment" : {
+      "en" : "The date on which a match is played."
+    },
+    "attributes" : [ "functional", "datatype" ],
+    "id" : "13"
+  }, {
+    "iri" : "http://example.org/tsl-ontology#managedBy",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "range" : "18",
+    "label" : {
+      "IRI-based" : "managedBy",
+      "en" : "managed by"
+    },
+    "domain" : "6",
+    "comment" : {
+      "en" : "Indicates the head coach who manages a team in a given context."
+    },
+    "attributes" : [ "object" ],
+    "id" : "17"
+  }, {
+    "iri" : "http://example.org/tsl-ontology#goalInMatch",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "range" : "14",
+    "label" : {
+      "IRI-based" : "goalInMatch",
+      "en" : "goal in match"
+    },
+    "domain" : "5",
+    "comment" : {
+      "en" : "The match in which a goal was scored."
+    },
+    "attributes" : [ "functional", "object" ],
+    "id" : "21"
+  }, {
+    "iri" : "http://example.org/tsl-ontology#goalsAgainst",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "range" : "26",
+    "label" : {
+      "IRI-based" : "goalsAgainst",
+      "en" : "goals against"
+    },
+    "domain" : "2",
+    "comment" : {
+      "en" : "Total goals conceded by the team in the season."
+    },
+    "attributes" : [ "functional", "datatype" ],
+    "id" : "25"
+  }, {
+    "iri" : "http://example.org/tsl-ontology#isLoan",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "range" : "30",
+    "label" : {
+      "IRI-based" : "isLoan",
+      "en" : "is loan"
+    },
+    "domain" : "29",
+    "comment" : {
+      "en" : "Indicates whether the transfer is a loan deal rather than a permanent transfer."
+    },
+    "attributes" : [ "functional", "datatype" ],
+    "id" : "28"
+  }, {
+    "iri" : "http://example.org/tsl-ontology#losses",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "range" : "31",
+    "label" : {
+      "IRI-based" : "losses",
+      "en" : "losses"
+    },
+    "domain" : "2",
+    "comment" : {
+      "en" : "Number of matches lost."
+    },
+    "attributes" : [ "functional", "datatype" ],
+    "id" : "32"
+  }, {
+    "iri" : "http://example.org/tsl-ontology#points",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "range" : "19",
+    "label" : {
+      "IRI-based" : "points",
+      "en" : "points"
+    },
+    "domain" : "2",
+    "comment" : {
+      "en" : "Total points accumulated in the season."
+    },
+    "attributes" : [ "functional", "datatype" ],
+    "id" : "33"
+  }, {
+    "iri" : "http://example.org/tsl-ontology#isOwnGoal",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "range" : "35",
+    "label" : {
+      "IRI-based" : "isOwnGoal",
+      "en" : "is own goal"
+    },
+    "domain" : "5",
+    "comment" : {
+      "en" : "Indicates whether the goal was an own goal."
+    },
+    "attributes" : [ "functional", "datatype" ],
+    "id" : "34"
+  }, {
+    "iri" : "http://example.org/tsl-ontology#stadiumCapacity",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "range" : "0",
+    "label" : {
+      "IRI-based" : "stadiumCapacity",
+      "en" : "stadium capacity"
+    },
+    "domain" : "11",
+    "comment" : {
+      "en" : "The maximum seating capacity of a stadium."
+    },
+    "attributes" : [ "functional", "datatype" ],
+    "id" : "41"
+  }, {
+    "iri" : "http://example.org/tsl-ontology#cardMinute",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "range" : "40",
+    "label" : {
+      "IRI-based" : "cardMinute",
+      "en" : "card minute"
+    },
+    "domain" : "46",
+    "comment" : {
+      "en" : "The minute of the match in which the card was shown."
+    },
+    "attributes" : [ "functional", "datatype" ],
+    "id" : "45"
+  }, {
+    "iri" : "http://example.org/tsl-ontology#stadiumCity",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "range" : "48",
+    "label" : {
+      "IRI-based" : "stadiumCity",
+      "en" : "stadium city"
+    },
+    "domain" : "11",
+    "comment" : {
+      "en" : "The city where the stadium is located."
+    },
+    "attributes" : [ "functional", "datatype" ],
+    "id" : "47"
+  }, {
+    "iri" : "http://example.org/tsl-ontology#transferredTo",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "range" : "6",
+    "label" : {
+      "IRI-based" : "transferredTo",
+      "en" : "transferred to"
+    },
+    "domain" : "29",
+    "comment" : {
+      "en" : "The club that the player is joining."
+    },
+    "attributes" : [ "functional", "object" ],
+    "id" : "50"
+  }, {
+    "iri" : "http://example.org/tsl-ontology#seasonYear",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "range" : "12",
+    "label" : {
+      "IRI-based" : "seasonYear",
+      "en" : "season year"
+    },
+    "domain" : "8",
+    "comment" : {
+      "en" : "The year or year range of the season (e.g., 2024-2025)."
+    },
+    "attributes" : [ "functional", "datatype" ],
+    "id" : "51"
+  }, {
+    "range" : "53",
+    "domain" : "5",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "52"
+  }, {
+    "range" : "55",
+    "domain" : "6",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "54"
+  }, {
+    "range" : "57",
+    "domain" : "14",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "56"
+  }, {
+    "range" : "53",
+    "domain" : "46",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "58"
+  }, {
+    "range" : "61",
+    "domain" : "60",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "59"
+  }, {
+    "range" : "61",
+    "domain" : "63",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "62"
+  }, {
+    "iri" : "http://example.org/tsl-ontology#transferFee",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "range" : "65",
+    "label" : {
+      "IRI-based" : "transferFee",
+      "en" : "transfer fee"
+    },
+    "domain" : "29",
+    "comment" : {
+      "en" : "The transfer fee amount in euros."
+    },
+    "attributes" : [ "functional", "datatype" ],
+    "id" : "64"
+  }, {
+    "iri" : "http://example.org/tsl-ontology#homeTeam",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "range" : "6",
+    "label" : {
+      "IRI-based" : "homeTeam",
+      "en" : "home team"
+    },
+    "domain" : "14",
+    "comment" : {
+      "en" : "The team playing at home in a match."
+    },
+    "attributes" : [ "functional", "object" ],
+    "id" : "66"
+  }, {
+    "range" : "61",
+    "domain" : "68",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "67"
+  }, {
+    "range" : "61",
+    "domain" : "70",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "69"
+  }, {
+    "iri" : "http://example.org/tsl-ontology#scoredBy",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "range" : "72",
+    "label" : {
+      "IRI-based" : "scoredBy",
+      "en" : "scored by"
+    },
+    "domain" : "5",
+    "comment" : {
+      "en" : "The player who scored the goal."
+    },
+    "attributes" : [ "functional", "object" ],
+    "id" : "71"
+  }, {
+    "range" : "23",
+    "domain" : "18",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "73"
+  }, {
+    "iri" : "http://example.org/tsl-ontology#goalMinute",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "range" : "37",
+    "label" : {
+      "IRI-based" : "goalMinute",
+      "en" : "goal minute"
+    },
+    "domain" : "5",
+    "comment" : {
+      "en" : "The minute of the match in which the goal was scored."
+    },
+    "attributes" : [ "functional", "datatype" ],
+    "id" : "74"
+  }, {
+    "range" : "23",
+    "domain" : "72",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "75"
+  }, {
+    "iri" : "http://example.org/tsl-ontology#cardInMatch",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "range" : "14",
+    "label" : {
+      "IRI-based" : "cardInMatch",
+      "en" : "card in match"
+    },
+    "domain" : "46",
+    "comment" : {
+      "en" : "The match in which the card was shown."
+    },
+    "attributes" : [ "functional", "object" ],
+    "id" : "76"
+  }, {
+    "iri" : "http://example.org/tsl-ontology#awayTeam",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "range" : "6",
+    "label" : {
+      "IRI-based" : "awayTeam",
+      "en" : "away team"
+    },
+    "domain" : "14",
+    "comment" : {
+      "en" : "The visiting team in a match."
+    },
+    "attributes" : [ "functional", "object" ],
+    "id" : "77"
+  }, {
+    "iri" : "http://example.org/tsl-ontology#matchWeek",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "range" : "16",
+    "label" : {
+      "IRI-based" : "matchWeek",
+      "en" : "match week"
+    },
+    "domain" : "14",
+    "comment" : {
+      "en" : "The league week number (hafta) in which the match is played."
+    },
+    "attributes" : [ "functional", "datatype" ],
+    "id" : "78"
+  }, {
+    "iri" : "http://example.org/tsl-ontology#birthDate",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "range" : "80",
+    "label" : {
+      "IRI-based" : "birthDate",
+      "en" : "birth date"
+    },
+    "domain" : "23",
+    "comment" : {
+      "en" : "The date of birth of a person."
+    },
+    "attributes" : [ "functional", "datatype" ],
+    "id" : "79"
+  }, {
+    "iri" : "http://example.org/tsl-ontology#inSeason",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "range" : "8",
+    "label" : {
+      "IRI-based" : "inSeason",
+      "en" : "in season"
+    },
+    "domain" : "82",
+    "comment" : {
+      "en" : "Indicates the season in which a match or transfer takes place."
+    },
+    "attributes" : [ "object" ],
+    "id" : "81"
+  }, {
+    "iri" : "http://example.org/tsl-ontology#homeStadium",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "range" : "11",
+    "label" : {
+      "IRI-based" : "homeStadium",
+      "en" : "home stadium"
+    },
+    "domain" : "6",
+    "comment" : {
+      "en" : "The home stadium of a team."
+    },
+    "attributes" : [ "functional", "object" ],
+    "id" : "83"
+  }, {
+    "range" : "46",
+    "domain" : "85",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "84"
+  }, {
+    "range" : "10",
+    "domain" : "11",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "86"
+  }, {
+    "iri" : "http://example.org/tsl-ontology#goalsFor",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "range" : "39",
+    "label" : {
+      "IRI-based" : "goalsFor",
+      "en" : "goals for"
+    },
+    "domain" : "2",
+    "comment" : {
+      "en" : "Total goals scored by the team in the season."
+    },
+    "attributes" : [ "functional", "datatype" ],
+    "id" : "87"
+  }, {
+    "range" : "46",
+    "domain" : "49",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "88"
+  }, {
+    "range" : "42",
+    "domain" : "23",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "89"
+  }, {
+    "iri" : "http://example.org/tsl-ontology#marketValue",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "range" : "27",
+    "label" : {
+      "IRI-based" : "marketValue",
+      "en" : "market value"
+    },
+    "domain" : "72",
+    "comment" : {
+      "en" : "The estimated market value of a player in euros."
+    },
+    "attributes" : [ "functional", "datatype" ],
+    "id" : "92"
+  }, {
+    "iri" : "http://example.org/tsl-ontology#playedAtStadium",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "range" : "11",
+    "label" : {
+      "IRI-based" : "playedAtStadium",
+      "en" : "played at stadium"
+    },
+    "domain" : "14",
+    "comment" : {
+      "en" : "The stadium where a match is played."
+    },
+    "attributes" : [ "functional", "object" ],
+    "id" : "93"
+  }, {
+    "iri" : "http://example.org/tsl-ontology#standingTeam",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "range" : "6",
+    "label" : {
+      "IRI-based" : "standingTeam",
+      "en" : "standing team"
+    },
+    "domain" : "2",
+    "comment" : {
+      "en" : "The team this standing record belongs to."
+    },
+    "attributes" : [ "functional", "object" ],
+    "id" : "94"
+  }, {
+    "iri" : "http://example.org/tsl-ontology#cardShownTo",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "range" : "72",
+    "label" : {
+      "IRI-based" : "cardShownTo",
+      "en" : "card shown to"
+    },
+    "domain" : "46",
+    "comment" : {
+      "en" : "The player who received the card."
+    },
+    "attributes" : [ "functional", "object" ],
+    "id" : "95"
+  }, {
+    "iri" : "http://example.org/tsl-ontology#hasPosition",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "range" : "61",
+    "label" : {
+      "IRI-based" : "hasPosition",
+      "en" : "has position"
+    },
+    "domain" : "72",
+    "comment" : {
+      "en" : "Indicates the playing position of a player on the field."
+    },
+    "attributes" : [ "object" ],
+    "id" : "96"
+  }, {
+    "iri" : "http://example.org/tsl-ontology#transferPlayer",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "range" : "72",
+    "label" : {
+      "IRI-based" : "transferPlayer",
+      "en" : "transfer player"
+    },
+    "domain" : "29",
+    "comment" : {
+      "en" : "The player who is being transferred."
+    },
+    "attributes" : [ "functional", "object" ],
+    "id" : "97"
+  }, {
+    "iri" : "http://example.org/tsl-ontology#cardReason",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "range" : "44",
+    "label" : {
+      "IRI-based" : "cardReason",
+      "en" : "card reason"
+    },
+    "domain" : "46",
+    "comment" : {
+      "en" : "The reason for the card being shown (e.g., foul, unsporting behavior)."
+    },
+    "attributes" : [ "functional", "datatype" ],
+    "id" : "98"
+  }, {
+    "iri" : "http://example.org/tsl-ontology#eventInMatch",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "range" : "14",
+    "label" : {
+      "IRI-based" : "eventInMatch",
+      "en" : "event in match"
+    },
+    "domain" : "53",
+    "comment" : {
+      "en" : "Links a match event to the match it occurred in."
+    },
+    "attributes" : [ "object" ],
+    "id" : "99"
+  }, {
+    "iri" : "http://example.org/tsl-ontology#awayScore",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "range" : "101",
+    "label" : {
+      "IRI-based" : "awayScore",
+      "en" : "away score"
+    },
+    "domain" : "14",
+    "comment" : {
+      "en" : "The number of goals scored by the away team."
+    },
+    "attributes" : [ "functional", "datatype" ],
+    "id" : "100"
+  }, {
+    "iri" : "http://example.org/tsl-ontology#assistedBy",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "range" : "72",
+    "label" : {
+      "IRI-based" : "assistedBy",
+      "en" : "assisted by"
+    },
+    "domain" : "5",
+    "comment" : {
+      "en" : "The player who provided the assist for a goal."
+    },
+    "attributes" : [ "object" ],
+    "id" : "102"
+  }, {
+    "iri" : "http://example.org/tsl-ontology#hasPlayer",
+    "inverse" : "104",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "range" : "72",
+    "label" : {
+      "IRI-based" : "hasPlayer",
+      "en" : "has player"
+    },
+    "domain" : "6",
+    "comment" : {
+      "en" : "Indicates that a team has a specific player in its roster."
+    },
+    "attributes" : [ "object" ],
+    "id" : "103"
+  }, {
+    "iri" : "http://example.org/tsl-ontology#nationality",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "range" : "20",
+    "label" : {
+      "IRI-based" : "nationality",
+      "en" : "nationality"
+    },
+    "domain" : "23",
+    "comment" : {
+      "en" : "The nationality or country of citizenship of a person."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "105"
+  }, {
+    "iri" : "http://example.org/tsl-ontology#belongsToLeague",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "belongsToLeague",
+      "en" : "belongs to league"
+    },
+    "domain" : "6",
+    "comment" : {
+      "en" : "Indicates that a team participates in a specific league."
+    },
+    "attributes" : [ "object" ],
+    "id" : "106"
+  }, {
+    "iri" : "http://example.org/tsl-ontology#isPenalty",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "range" : "36",
+    "label" : {
+      "IRI-based" : "isPenalty",
+      "en" : "is penalty"
+    },
+    "domain" : "5",
+    "comment" : {
+      "en" : "Indicates whether the goal was scored from a penalty kick."
+    },
+    "attributes" : [ "functional", "datatype" ],
+    "id" : "107"
+  }, {
+    "range" : "68",
+    "domain" : "60",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "108"
+  }, {
+    "range" : "70",
+    "domain" : "60",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "109"
+  }, {
+    "range" : "68",
+    "domain" : "63",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "110"
+  }, {
+    "range" : "70",
+    "domain" : "63",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "111"
+  }, {
+    "range" : "68",
+    "domain" : "70",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "112"
+  }, {
+    "range" : "85",
+    "domain" : "49",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "113"
+  }, {
+    "iri" : "http://example.org/tsl-ontology#wins",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "range" : "91",
+    "label" : {
+      "IRI-based" : "wins",
+      "en" : "wins"
+    },
+    "domain" : "2",
+    "comment" : {
+      "en" : "Number of matches won."
+    },
+    "attributes" : [ "functional", "datatype" ],
+    "id" : "114"
+  }, {
+    "iri" : "http://example.org/tsl-ontology#leagueCountry",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "range" : "22",
+    "label" : {
+      "IRI-based" : "leagueCountry",
+      "en" : "league country"
+    },
+    "domain" : "9",
+    "comment" : {
+      "en" : "The country where the league is based."
+    },
+    "attributes" : [ "functional", "datatype" ],
+    "id" : "115"
+  }, {
+    "range" : "72",
+    "domain" : "18",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "116"
+  }, {
+    "range" : "63",
+    "domain" : "60",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "117"
+  }, {
+    "iri" : "http://example.org/tsl-ontology#draws",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "range" : "43",
+    "label" : {
+      "IRI-based" : "draws",
+      "en" : "draws"
+    },
+    "domain" : "2",
+    "comment" : {
+      "en" : "Number of matches drawn."
+    },
+    "attributes" : [ "functional", "datatype" ],
+    "id" : "118"
+  }, {
+    "iri" : "http://example.org/tsl-ontology#jerseyNumber",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "range" : "24",
+    "label" : {
+      "IRI-based" : "jerseyNumber",
+      "en" : "jersey number"
+    },
+    "domain" : "72",
+    "comment" : {
+      "en" : "The shirt number worn by a player."
+    },
+    "attributes" : [ "functional", "datatype" ],
+    "id" : "119"
+  }, {
+    "iri" : "http://example.org/tsl-ontology#standingSeason",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "range" : "8",
+    "label" : {
+      "IRI-based" : "standingSeason",
+      "en" : "standing season"
+    },
+    "domain" : "2",
+    "comment" : {
+      "en" : "The season this standing record belongs to."
+    },
+    "attributes" : [ "functional", "object" ],
+    "id" : "120"
+  }, {
+    "iri" : "http://example.org/tsl-ontology#playsFor",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "range" : "6",
+    "label" : {
+      "IRI-based" : "playsFor",
+      "en" : "plays for"
+    },
+    "domain" : "72",
+    "comment" : {
+      "en" : "Indicates which team a player is currently registered to play for."
+    },
+    "attributes" : [ "object" ],
+    "id" : "104"
+  }, {
+    "iri" : "http://example.org/tsl-ontology#transferDate",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "range" : "90",
+    "label" : {
+      "IRI-based" : "transferDate",
+      "en" : "transfer date"
+    },
+    "domain" : "29",
+    "comment" : {
+      "en" : "The date on which the transfer was completed."
+    },
+    "attributes" : [ "functional", "datatype" ],
+    "id" : "121"
+  }, {
+    "iri" : "http://example.org/tsl-ontology#manages",
+    "inverse" : "17",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "range" : "6",
+    "label" : {
+      "IRI-based" : "manages",
+      "en" : "manages"
+    },
+    "domain" : "18",
+    "comment" : {
+      "en" : "Indicates which team a coach is managing."
+    },
+    "attributes" : [ "object" ],
+    "id" : "122"
+  }, {
+    "iri" : "http://example.org/tsl-ontology#homeScore",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "range" : "38",
+    "label" : {
+      "IRI-based" : "homeScore",
+      "en" : "home score"
+    },
+    "domain" : "14",
+    "comment" : {
+      "en" : "The number of goals scored by the home team."
+    },
+    "attributes" : [ "functional", "datatype" ],
+    "id" : "123"
+  }, {
+    "iri" : "http://example.org/tsl-ontology#transferredFrom",
+    "baseIri" : "http://example.org/tsl-ontology",
+    "range" : "6",
+    "label" : {
+      "IRI-based" : "transferredFrom",
+      "en" : "transferred from"
+    },
+    "domain" : "29",
+    "comment" : {
+      "en" : "The club that the player is leaving."
+    },
+    "attributes" : [ "functional", "object" ],
+    "id" : "124"
+  } ]
+}

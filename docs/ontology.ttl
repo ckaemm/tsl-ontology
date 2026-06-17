@@ -1,0 +1,708 @@
+@prefix : <http://example.org/tsl-ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://example.org/tsl-ontology#> .
+
+<http://example.org/tsl-ontology> rdf:type owl:Ontology ;
+                                   <http://purl.org/dc/elements/1.1/creator> "Cemil and Group Members" ;
+                                   <http://purl.org/dc/elements/1.1/description> "A formal knowledge model for professional football in the Turkish Super Lig, covering teams, players, matches, goals, cards, transfers, stadiums, and coaching staff."@en ;
+                                   <http://purl.org/dc/elements/1.1/title> "Turkish Super Lig Football Ontology"@en ;
+                                   <http://purl.org/dc/terms/created> "2026-04-28"^^xsd:date ;
+                                   <http://purl.org/vocab/vann/preferredNamespacePrefix> "tsl" ;
+                                   <http://purl.org/vocab/vann/preferredNamespaceUri> "http://example.org/tsl-ontology#" ;
+                                   owl:versionInfo "1.0.0" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/description
+<http://purl.org/dc/elements/1.1/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://example.org/tsl-ontology#assistedBy
+:assistedBy rdf:type owl:ObjectProperty ;
+            rdfs:domain :Goal ;
+            rdfs:range :Player ;
+            rdfs:comment "The player who provided the assist for a goal."@en ;
+            rdfs:label "assisted by"@en .
+
+
+###  http://example.org/tsl-ontology#awayTeam
+:awayTeam rdf:type owl:ObjectProperty ,
+                   owl:FunctionalProperty ;
+          rdfs:domain :Match ;
+          rdfs:range :Team ;
+          rdfs:comment "The visiting team in a match."@en ;
+          rdfs:label "away team"@en .
+
+
+###  http://example.org/tsl-ontology#belongsToLeague
+:belongsToLeague rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Team ;
+                 rdfs:range :League ;
+                 rdfs:comment "Indicates that a team participates in a specific league."@en ;
+                 rdfs:label "belongs to league"@en .
+
+
+###  http://example.org/tsl-ontology#cardInMatch
+:cardInMatch rdf:type owl:ObjectProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain :Card ;
+             rdfs:range :Match ;
+             rdfs:comment "The match in which the card was shown."@en ;
+             rdfs:label "card in match"@en .
+
+
+###  http://example.org/tsl-ontology#cardShownTo
+:cardShownTo rdf:type owl:ObjectProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain :Card ;
+             rdfs:range :Player ;
+             rdfs:comment "The player who received the card."@en ;
+             rdfs:label "card shown to"@en .
+
+
+###  http://example.org/tsl-ontology#eventInMatch
+:eventInMatch rdf:type owl:ObjectProperty ;
+              rdfs:domain :MatchEvent ;
+              rdfs:range :Match ;
+              rdfs:comment "Links a match event to the match it occurred in."@en ;
+              rdfs:label "event in match"@en .
+
+
+###  http://example.org/tsl-ontology#goalForTeam
+:goalForTeam rdf:type owl:ObjectProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain :Goal ;
+             rdfs:range :Team ;
+             owl:propertyChainAxiom ( :scoredBy
+                                      :playsFor
+                                    ) ;
+             rdfs:comment "The team that scored the goal."@en ;
+             rdfs:label "goal for team"@en .
+
+
+###  http://example.org/tsl-ontology#goalInMatch
+:goalInMatch rdf:type owl:ObjectProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain :Goal ;
+             rdfs:range :Match ;
+             rdfs:comment "The match in which a goal was scored."@en ;
+             rdfs:label "goal in match"@en .
+
+
+###  http://example.org/tsl-ontology#hasPlayer
+:hasPlayer rdf:type owl:ObjectProperty ;
+           owl:inverseOf :playsFor ;
+           rdfs:domain :Team ;
+           rdfs:range :Player ;
+           rdfs:comment "Indicates that a team has a specific player in its roster."@en ;
+           rdfs:label "has player"@en .
+
+
+###  http://example.org/tsl-ontology#hasPosition
+:hasPosition rdf:type owl:ObjectProperty ;
+             rdfs:domain :Player ;
+             rdfs:range :Position ;
+             rdfs:comment "Indicates the playing position of a player on the field."@en ;
+             rdfs:label "has position"@en .
+
+
+###  http://example.org/tsl-ontology#homeStadium
+:homeStadium rdf:type owl:ObjectProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain :Team ;
+             rdfs:range :Stadium ;
+             rdfs:comment "The home stadium of a team."@en ;
+             rdfs:label "home stadium"@en .
+
+
+###  http://example.org/tsl-ontology#homeTeam
+:homeTeam rdf:type owl:ObjectProperty ,
+                   owl:FunctionalProperty ;
+          rdfs:domain :Match ;
+          rdfs:range :Team ;
+          rdfs:comment "The team playing at home in a match."@en ;
+          rdfs:label "home team"@en .
+
+
+###  http://example.org/tsl-ontology#inSeason
+:inSeason rdf:type owl:ObjectProperty ;
+          rdfs:range :Season ;
+          rdfs:comment "Indicates the season in which a match or transfer takes place."@en ;
+          rdfs:label "in season"@en .
+
+
+###  http://example.org/tsl-ontology#managedBy
+:managedBy rdf:type owl:ObjectProperty ;
+           rdfs:domain :Team ;
+           rdfs:range :Coach ;
+           rdfs:comment "Indicates the head coach who manages a team in a given context."@en ;
+           rdfs:label "managed by"@en .
+
+
+###  http://example.org/tsl-ontology#manages
+:manages rdf:type owl:ObjectProperty ;
+         owl:inverseOf :managedBy ;
+         rdfs:domain :Coach ;
+         rdfs:range :Team ;
+         rdfs:comment "Indicates which team a coach is managing."@en ;
+         rdfs:label "manages"@en .
+
+
+###  http://example.org/tsl-ontology#playedAtStadium
+:playedAtStadium rdf:type owl:ObjectProperty ,
+                          owl:FunctionalProperty ;
+                 rdfs:domain :Match ;
+                 rdfs:range :Stadium ;
+                 rdfs:comment "The stadium where a match is played."@en ;
+                 rdfs:label "played at stadium"@en .
+
+
+###  http://example.org/tsl-ontology#playsFor
+:playsFor rdf:type owl:ObjectProperty ;
+          rdfs:domain :Player ;
+          rdfs:range :Team ;
+          rdfs:comment "Indicates which team a player is currently registered to play for."@en ;
+          rdfs:label "plays for"@en .
+
+
+###  http://example.org/tsl-ontology#scoredBy
+:scoredBy rdf:type owl:ObjectProperty ,
+                   owl:FunctionalProperty ;
+          rdfs:domain :Goal ;
+          rdfs:range :Player ;
+          rdfs:comment "The player who scored the goal."@en ;
+          rdfs:label "scored by"@en .
+
+
+###  http://example.org/tsl-ontology#seasonOfLeague
+:seasonOfLeague rdf:type owl:ObjectProperty ;
+                rdfs:domain :Season ;
+                rdfs:range :League ;
+                rdfs:comment "Links a season to the league it belongs to."@en ;
+                rdfs:label "season of league"@en .
+
+
+###  http://example.org/tsl-ontology#standingSeason
+:standingSeason rdf:type owl:ObjectProperty ,
+                         owl:FunctionalProperty ;
+                rdfs:domain :Standing ;
+                rdfs:range :Season ;
+                rdfs:comment "The season this standing record belongs to."@en ;
+                rdfs:label "standing season"@en .
+
+
+###  http://example.org/tsl-ontology#standingTeam
+:standingTeam rdf:type owl:ObjectProperty ,
+                       owl:FunctionalProperty ;
+              rdfs:domain :Standing ;
+              rdfs:range :Team ;
+              rdfs:comment "The team this standing record belongs to."@en ;
+              rdfs:label "standing team"@en .
+
+
+###  http://example.org/tsl-ontology#transferPlayer
+:transferPlayer rdf:type owl:ObjectProperty ,
+                         owl:FunctionalProperty ;
+                rdfs:domain :Transfer ;
+                rdfs:range :Player ;
+                rdfs:comment "The player who is being transferred."@en ;
+                rdfs:label "transfer player"@en .
+
+
+###  http://example.org/tsl-ontology#transferredFrom
+:transferredFrom rdf:type owl:ObjectProperty ,
+                          owl:FunctionalProperty ;
+                 rdfs:domain :Transfer ;
+                 rdfs:range :Team ;
+                 rdfs:comment "The club that the player is leaving."@en ;
+                 rdfs:label "transferred from"@en .
+
+
+###  http://example.org/tsl-ontology#transferredTo
+:transferredTo rdf:type owl:ObjectProperty ,
+                        owl:FunctionalProperty ;
+               rdfs:domain :Transfer ;
+               rdfs:range :Team ;
+               rdfs:comment "The club that the player is joining."@en ;
+               rdfs:label "transferred to"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://example.org/tsl-ontology#awayScore
+:awayScore rdf:type owl:DatatypeProperty ,
+                    owl:FunctionalProperty ;
+           rdfs:domain :Match ;
+           rdfs:range xsd:integer ;
+           rdfs:comment "The number of goals scored by the away team."@en ;
+           rdfs:label "away score"@en .
+
+
+###  http://example.org/tsl-ontology#birthDate
+:birthDate rdf:type owl:DatatypeProperty ,
+                    owl:FunctionalProperty ;
+           rdfs:domain :Person ;
+           rdfs:range xsd:date ;
+           rdfs:comment "The date of birth of a person."@en ;
+           rdfs:label "birth date"@en .
+
+
+###  http://example.org/tsl-ontology#cardMinute
+:cardMinute rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
+            rdfs:domain :Card ;
+            rdfs:range xsd:integer ;
+            rdfs:comment "The minute of the match in which the card was shown."@en ;
+            rdfs:label "card minute"@en .
+
+
+###  http://example.org/tsl-ontology#cardReason
+:cardReason rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
+            rdfs:domain :Card ;
+            rdfs:range xsd:string ;
+            rdfs:comment "The reason for the card being shown (e.g., foul, unsporting behavior)."@en ;
+            rdfs:label "card reason"@en .
+
+
+###  http://example.org/tsl-ontology#draws
+:draws rdf:type owl:DatatypeProperty ,
+                owl:FunctionalProperty ;
+       rdfs:domain :Standing ;
+       rdfs:range xsd:integer ;
+       rdfs:comment "Number of matches drawn."@en ;
+       rdfs:label "draws"@en .
+
+
+###  http://example.org/tsl-ontology#goalMinute
+:goalMinute rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
+            rdfs:domain :Goal ;
+            rdfs:range xsd:integer ;
+            rdfs:comment "The minute of the match in which the goal was scored."@en ;
+            rdfs:label "goal minute"@en .
+
+
+###  http://example.org/tsl-ontology#goalsAgainst
+:goalsAgainst rdf:type owl:DatatypeProperty ,
+                       owl:FunctionalProperty ;
+              rdfs:domain :Standing ;
+              rdfs:range xsd:integer ;
+              rdfs:comment "Total goals conceded by the team in the season."@en ;
+              rdfs:label "goals against"@en .
+
+
+###  http://example.org/tsl-ontology#goalsFor
+:goalsFor rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty ;
+          rdfs:domain :Standing ;
+          rdfs:range xsd:integer ;
+          rdfs:comment "Total goals scored by the team in the season."@en ;
+          rdfs:label "goals for"@en .
+
+
+###  http://example.org/tsl-ontology#homeScore
+:homeScore rdf:type owl:DatatypeProperty ,
+                    owl:FunctionalProperty ;
+           rdfs:domain :Match ;
+           rdfs:range xsd:integer ;
+           rdfs:comment "The number of goals scored by the home team."@en ;
+           rdfs:label "home score"@en .
+
+
+###  http://example.org/tsl-ontology#isLoan
+:isLoan rdf:type owl:DatatypeProperty ,
+                 owl:FunctionalProperty ;
+        rdfs:domain :Transfer ;
+        rdfs:range xsd:boolean ;
+        rdfs:comment "Indicates whether the transfer is a loan deal rather than a permanent transfer."@en ;
+        rdfs:label "is loan"@en .
+
+
+###  http://example.org/tsl-ontology#isOwnGoal
+:isOwnGoal rdf:type owl:DatatypeProperty ,
+                    owl:FunctionalProperty ;
+           rdfs:domain :Goal ;
+           rdfs:range xsd:boolean ;
+           rdfs:comment "Indicates whether the goal was an own goal."@en ;
+           rdfs:label "is own goal"@en .
+
+
+###  http://example.org/tsl-ontology#isPenalty
+:isPenalty rdf:type owl:DatatypeProperty ,
+                    owl:FunctionalProperty ;
+           rdfs:domain :Goal ;
+           rdfs:range xsd:boolean ;
+           rdfs:comment "Indicates whether the goal was scored from a penalty kick."@en ;
+           rdfs:label "is penalty"@en .
+
+
+###  http://example.org/tsl-ontology#jerseyNumber
+:jerseyNumber rdf:type owl:DatatypeProperty ,
+                       owl:FunctionalProperty ;
+              rdfs:domain :Player ;
+              rdfs:range xsd:integer ;
+              rdfs:comment "The shirt number worn by a player."@en ;
+              rdfs:label "jersey number"@en .
+
+
+###  http://example.org/tsl-ontology#leagueCountry
+:leagueCountry rdf:type owl:DatatypeProperty ,
+                        owl:FunctionalProperty ;
+               rdfs:domain :League ;
+               rdfs:range xsd:string ;
+               rdfs:comment "The country where the league is based."@en ;
+               rdfs:label "league country"@en .
+
+
+###  http://example.org/tsl-ontology#losses
+:losses rdf:type owl:DatatypeProperty ,
+                 owl:FunctionalProperty ;
+        rdfs:domain :Standing ;
+        rdfs:range xsd:integer ;
+        rdfs:comment "Number of matches lost."@en ;
+        rdfs:label "losses"@en .
+
+
+###  http://example.org/tsl-ontology#marketValue
+:marketValue rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain :Player ;
+             rdfs:range xsd:decimal ;
+             rdfs:comment "The estimated market value of a player in euros."@en ;
+             rdfs:label "market value"@en .
+
+
+###  http://example.org/tsl-ontology#matchDate
+:matchDate rdf:type owl:DatatypeProperty ,
+                    owl:FunctionalProperty ;
+           rdfs:domain :Match ;
+           rdfs:range xsd:date ;
+           rdfs:comment "The date on which a match is played."@en ;
+           rdfs:label "match date"@en .
+
+
+###  http://example.org/tsl-ontology#matchWeek
+:matchWeek rdf:type owl:DatatypeProperty ,
+                    owl:FunctionalProperty ;
+           rdfs:domain :Match ;
+           rdfs:range xsd:integer ;
+           rdfs:comment "The league week number (hafta) in which the match is played."@en ;
+           rdfs:label "match week"@en .
+
+
+###  http://example.org/tsl-ontology#nationality
+:nationality rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Person ;
+             rdfs:range xsd:string ;
+             rdfs:comment "The nationality or country of citizenship of a person."@en ;
+             rdfs:label "nationality"@en .
+
+
+###  http://example.org/tsl-ontology#points
+:points rdf:type owl:DatatypeProperty ,
+                 owl:FunctionalProperty ;
+        rdfs:domain :Standing ;
+        rdfs:range xsd:integer ;
+        rdfs:comment "Total points accumulated in the season."@en ;
+        rdfs:label "points"@en .
+
+
+###  http://example.org/tsl-ontology#position
+:position rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty ;
+          rdfs:domain :Standing ;
+          rdfs:range xsd:integer ;
+          rdfs:comment "The final league position of the team (1 = champion)."@en ;
+          rdfs:label "position"@en .
+
+
+###  http://example.org/tsl-ontology#seasonYear
+:seasonYear rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
+            rdfs:domain :Season ;
+            rdfs:range xsd:string ;
+            rdfs:comment "The year or year range of the season (e.g., 2024-2025)."@en ;
+            rdfs:label "season year"@en .
+
+
+###  http://example.org/tsl-ontology#stadiumCapacity
+:stadiumCapacity rdf:type owl:DatatypeProperty ,
+                          owl:FunctionalProperty ;
+                 rdfs:domain :Stadium ;
+                 rdfs:range xsd:integer ;
+                 rdfs:comment "The maximum seating capacity of a stadium."@en ;
+                 rdfs:label "stadium capacity"@en .
+
+
+###  http://example.org/tsl-ontology#stadiumCity
+:stadiumCity rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain :Stadium ;
+             rdfs:range xsd:string ;
+             rdfs:comment "The city where the stadium is located."@en ;
+             rdfs:label "stadium city"@en .
+
+
+###  http://example.org/tsl-ontology#transferDate
+:transferDate rdf:type owl:DatatypeProperty ,
+                       owl:FunctionalProperty ;
+              rdfs:domain :Transfer ;
+              rdfs:range xsd:date ;
+              rdfs:comment "The date on which the transfer was completed."@en ;
+              rdfs:label "transfer date"@en .
+
+
+###  http://example.org/tsl-ontology#transferFee
+:transferFee rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain :Transfer ;
+             rdfs:range xsd:decimal ;
+             rdfs:comment "The transfer fee amount in euros."@en ;
+             rdfs:label "transfer fee"@en .
+
+
+###  http://example.org/tsl-ontology#wins
+:wins rdf:type owl:DatatypeProperty ,
+               owl:FunctionalProperty ;
+      rdfs:domain :Standing ;
+      rdfs:range xsd:integer ;
+      rdfs:comment "Number of matches won."@en ;
+      rdfs:label "wins"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://example.org/tsl-ontology#Card
+:Card rdf:type owl:Class ;
+      rdfs:subClassOf :MatchEvent ;
+      rdfs:comment "A disciplinary card shown to a player by the referee during a match."@en ;
+      rdfs:label "Card"@en .
+
+
+###  http://example.org/tsl-ontology#Coach
+:Coach rdf:type owl:Class ;
+       rdfs:subClassOf :Person ;
+       owl:disjointWith :Player ;
+       rdfs:comment "A head coach or manager responsible for leading a team."@en ;
+       rdfs:label "Coach"@en .
+
+
+###  http://example.org/tsl-ontology#Defender
+:Defender rdf:type owl:Class ;
+          rdfs:subClassOf :Position ;
+          owl:disjointWith :Forward ,
+                           :Goalkeeper ,
+                           :Midfielder ;
+          rdfs:comment "A player position focused on preventing the opposing team from scoring."@en ;
+          rdfs:label "Defender"@en .
+
+
+###  http://example.org/tsl-ontology#Forward
+:Forward rdf:type owl:Class ;
+         rdfs:subClassOf :Position ;
+         owl:disjointWith :Goalkeeper ,
+                          :Midfielder ;
+         rdfs:comment "A player position primarily responsible for scoring goals."@en ;
+         rdfs:label "Forward"@en .
+
+
+###  http://example.org/tsl-ontology#Goal
+:Goal rdf:type owl:Class ;
+      rdfs:subClassOf :MatchEvent ;
+      rdfs:comment "A goal scored by a player during a match."@en ;
+      rdfs:label "Goal"@en .
+
+
+###  http://example.org/tsl-ontology#Goalkeeper
+:Goalkeeper rdf:type owl:Class ;
+            rdfs:subClassOf :Position ;
+            owl:disjointWith :Midfielder ;
+            rdfs:comment "The player position responsible for guarding the goal."@en ;
+            rdfs:label "Goalkeeper"@en .
+
+
+###  http://example.org/tsl-ontology#League
+:League rdf:type owl:Class ;
+        rdfs:comment "A professional football league organization that hosts competitive seasons."@en ;
+        rdfs:label "League"@en .
+
+
+###  http://example.org/tsl-ontology#Match
+:Match rdf:type owl:Class ;
+       rdfs:subClassOf <http://schema.org/SportsEvent> ;
+       rdfs:comment "A competitive football match played between two teams within a league season."@en ;
+       rdfs:label "Match"@en .
+
+
+###  http://example.org/tsl-ontology#MatchEvent
+:MatchEvent rdf:type owl:Class ;
+            rdfs:comment "An event that occurs during a football match, such as a goal or a card."@en ;
+            rdfs:label "Match Event"@en .
+
+
+###  http://example.org/tsl-ontology#Midfielder
+:Midfielder rdf:type owl:Class ;
+            rdfs:subClassOf :Position ;
+            rdfs:comment "A player position that operates in the middle of the field, linking defense and attack."@en ;
+            rdfs:label "Midfielder"@en .
+
+
+###  http://example.org/tsl-ontology#Person
+:Person rdf:type owl:Class ;
+        rdfs:subClassOf <http://xmlns.com/foaf/0.1/Person> ;
+        rdfs:comment "A human individual involved in professional football."@en ;
+        rdfs:label "Person"@en .
+
+
+###  http://example.org/tsl-ontology#Player
+:Player rdf:type owl:Class ;
+        rdfs:subClassOf :Person ;
+        rdfs:comment "A professional football player who is registered to play for a team."@en ;
+        rdfs:label "Player"@en .
+
+
+###  http://example.org/tsl-ontology#Position
+:Position rdf:type owl:Class ;
+          rdfs:comment "A playing position on the football field."@en ;
+          rdfs:label "Position"@en .
+
+
+###  http://example.org/tsl-ontology#RedCard
+:RedCard rdf:type owl:Class ;
+         rdfs:subClassOf :Card ;
+         owl:disjointWith :YellowCard ;
+         rdfs:comment "A dismissal card shown to a player, resulting in ejection from the match."@en ;
+         rdfs:label "Red Card"@en .
+
+
+###  http://example.org/tsl-ontology#Season
+:Season rdf:type owl:Class ;
+        rdfs:comment "A specific competitive season within a league, typically spanning one year (e.g., 2024-2025)."@en ;
+        rdfs:label "Season"@en .
+
+
+###  http://example.org/tsl-ontology#Stadium
+:Stadium rdf:type owl:Class ;
+         rdfs:subClassOf <http://schema.org/StadiumOrArena> ;
+         rdfs:comment "A sports venue where football matches are played."@en ;
+         rdfs:label "Stadium"@en .
+
+
+###  http://example.org/tsl-ontology#Standing
+:Standing rdf:type owl:Class ;
+          rdfs:comment "A team's position and statistics in the league standings for a specific season."@en ;
+          rdfs:label "Standing"@en .
+
+
+###  http://example.org/tsl-ontology#Team
+:Team rdf:type owl:Class ;
+      rdfs:subClassOf <http://schema.org/SportsTeam> ;
+      rdfs:comment "A professional football club that participates in a league."@en ;
+      rdfs:label "Team"@en .
+
+
+###  http://example.org/tsl-ontology#Transfer
+:Transfer rdf:type owl:Class ;
+          rdfs:comment "A player transfer transaction between two clubs, recording the movement of a player from one team to another."@en ;
+          rdfs:label "Transfer"@en .
+
+
+###  http://example.org/tsl-ontology#YellowCard
+:YellowCard rdf:type owl:Class ;
+            rdfs:subClassOf :Card ;
+            rdfs:comment "A caution card shown to a player for a minor foul or unsporting behavior."@en ;
+            rdfs:label "Yellow Card"@en .
+
+
+###  http://schema.org/SportsEvent
+<http://schema.org/SportsEvent> rdf:type owl:Class .
+
+
+###  http://schema.org/SportsTeam
+<http://schema.org/SportsTeam> rdf:type owl:Class .
+
+
+###  http://schema.org/StadiumOrArena
+<http://schema.org/StadiumOrArena> rdf:type owl:Class .
+
+
+###  http://xmlns.com/foaf/0.1/Person
+<http://xmlns.com/foaf/0.1/Person> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://example.org/tsl-ontology#defender_position
+:defender_position rdf:type owl:NamedIndividual ,
+                            :Defender ;
+                   rdfs:comment "The defender position."@en ;
+                   rdfs:label "Defender"@en .
+
+
+###  http://example.org/tsl-ontology#forward_position
+:forward_position rdf:type owl:NamedIndividual ,
+                           :Forward ;
+                  rdfs:comment "The forward position."@en ;
+                  rdfs:label "Forward"@en .
+
+
+###  http://example.org/tsl-ontology#goalkeeper_position
+:goalkeeper_position rdf:type owl:NamedIndividual ,
+                              :Goalkeeper ;
+                     rdfs:comment "The goalkeeper position."@en ;
+                     rdfs:label "Goalkeeper"@en .
+
+
+###  http://example.org/tsl-ontology#midfielder_position
+:midfielder_position rdf:type owl:NamedIndividual ,
+                              :Midfielder ;
+                     rdfs:comment "The midfielder position."@en ;
+                     rdfs:label "Midfielder"@en .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

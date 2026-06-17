@@ -1,0 +1,647 @@
+<http://example.org/tsl-ontology> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://example.org/tsl-ontology> <http://purl.org/dc/elements/1.1/creator> "Cemil and Group Members" .
+<http://example.org/tsl-ontology> <http://purl.org/dc/elements/1.1/description> "A formal knowledge model for professional football in the Turkish Super Lig, covering teams, players, matches, goals, cards, transfers, stadiums, and coaching staff."@en .
+<http://example.org/tsl-ontology> <http://purl.org/dc/elements/1.1/title> "Turkish Super Lig Football Ontology"@en .
+<http://example.org/tsl-ontology> <http://purl.org/dc/terms/created> "2026-04-28"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://example.org/tsl-ontology> <http://purl.org/vocab/vann/preferredNamespacePrefix> "tsl" .
+<http://example.org/tsl-ontology> <http://purl.org/vocab/vann/preferredNamespaceUri> "http://example.org/tsl-ontology#" .
+<http://example.org/tsl-ontology> <http://www.w3.org/2002/07/owl#versionInfo> "1.0.0" .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/description
+<http://purl.org/dc/elements/1.1/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Datatypes
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/2001/XMLSchema#date
+<http://www.w3.org/2001/XMLSchema#date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://example.org/tsl-ontology#assistedBy
+<http://example.org/tsl-ontology#assistedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/tsl-ontology#assistedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/tsl-ontology#Goal> .
+<http://example.org/tsl-ontology#assistedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/tsl-ontology#Player> .
+<http://example.org/tsl-ontology#assistedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "The player who provided the assist for a goal."@en .
+<http://example.org/tsl-ontology#assistedBy> <http://www.w3.org/2000/01/rdf-schema#label> "assisted by"@en .
+# 
+# http://example.org/tsl-ontology#awayTeam
+<http://example.org/tsl-ontology#awayTeam> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/tsl-ontology#awayTeam> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://example.org/tsl-ontology#awayTeam> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/tsl-ontology#Match> .
+<http://example.org/tsl-ontology#awayTeam> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/tsl-ontology#Team> .
+<http://example.org/tsl-ontology#awayTeam> <http://www.w3.org/2000/01/rdf-schema#comment> "The visiting team in a match."@en .
+<http://example.org/tsl-ontology#awayTeam> <http://www.w3.org/2000/01/rdf-schema#label> "away team"@en .
+# 
+# http://example.org/tsl-ontology#belongsToLeague
+<http://example.org/tsl-ontology#belongsToLeague> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/tsl-ontology#belongsToLeague> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/tsl-ontology#Team> .
+<http://example.org/tsl-ontology#belongsToLeague> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/tsl-ontology#League> .
+<http://example.org/tsl-ontology#belongsToLeague> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that a team participates in a specific league."@en .
+<http://example.org/tsl-ontology#belongsToLeague> <http://www.w3.org/2000/01/rdf-schema#label> "belongs to league"@en .
+# 
+# http://example.org/tsl-ontology#cardInMatch
+<http://example.org/tsl-ontology#cardInMatch> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/tsl-ontology#cardInMatch> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://example.org/tsl-ontology#cardInMatch> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/tsl-ontology#Card> .
+<http://example.org/tsl-ontology#cardInMatch> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/tsl-ontology#Match> .
+<http://example.org/tsl-ontology#cardInMatch> <http://www.w3.org/2000/01/rdf-schema#comment> "The match in which the card was shown."@en .
+<http://example.org/tsl-ontology#cardInMatch> <http://www.w3.org/2000/01/rdf-schema#label> "card in match"@en .
+# 
+# http://example.org/tsl-ontology#cardShownTo
+<http://example.org/tsl-ontology#cardShownTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/tsl-ontology#cardShownTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://example.org/tsl-ontology#cardShownTo> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/tsl-ontology#Card> .
+<http://example.org/tsl-ontology#cardShownTo> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/tsl-ontology#Player> .
+<http://example.org/tsl-ontology#cardShownTo> <http://www.w3.org/2000/01/rdf-schema#comment> "The player who received the card."@en .
+<http://example.org/tsl-ontology#cardShownTo> <http://www.w3.org/2000/01/rdf-schema#label> "card shown to"@en .
+# 
+# http://example.org/tsl-ontology#eventInMatch
+<http://example.org/tsl-ontology#eventInMatch> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/tsl-ontology#eventInMatch> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/tsl-ontology#MatchEvent> .
+<http://example.org/tsl-ontology#eventInMatch> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/tsl-ontology#Match> .
+<http://example.org/tsl-ontology#eventInMatch> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a match event to the match it occurred in."@en .
+<http://example.org/tsl-ontology#eventInMatch> <http://www.w3.org/2000/01/rdf-schema#label> "event in match"@en .
+# 
+# http://example.org/tsl-ontology#goalForTeam
+<http://example.org/tsl-ontology#goalForTeam> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/tsl-ontology#goalForTeam> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://example.org/tsl-ontology#goalForTeam> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/tsl-ontology#Goal> .
+<http://example.org/tsl-ontology#goalForTeam> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/tsl-ontology#Team> .
+<http://example.org/tsl-ontology#goalForTeam> <http://www.w3.org/2002/07/owl#propertyChainAxiom> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid1 .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://example.org/tsl-ontology#playsFor> .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://example.org/tsl-ontology#scoredBy> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<http://example.org/tsl-ontology#goalForTeam> <http://www.w3.org/2000/01/rdf-schema#comment> "The team that scored the goal."@en .
+<http://example.org/tsl-ontology#goalForTeam> <http://www.w3.org/2000/01/rdf-schema#label> "goal for team"@en .
+# 
+# http://example.org/tsl-ontology#goalInMatch
+<http://example.org/tsl-ontology#goalInMatch> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/tsl-ontology#goalInMatch> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://example.org/tsl-ontology#goalInMatch> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/tsl-ontology#Goal> .
+<http://example.org/tsl-ontology#goalInMatch> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/tsl-ontology#Match> .
+<http://example.org/tsl-ontology#goalInMatch> <http://www.w3.org/2000/01/rdf-schema#comment> "The match in which a goal was scored."@en .
+<http://example.org/tsl-ontology#goalInMatch> <http://www.w3.org/2000/01/rdf-schema#label> "goal in match"@en .
+# 
+# http://example.org/tsl-ontology#hasPlayer
+<http://example.org/tsl-ontology#hasPlayer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/tsl-ontology#hasPlayer> <http://www.w3.org/2002/07/owl#inverseOf> <http://example.org/tsl-ontology#playsFor> .
+<http://example.org/tsl-ontology#hasPlayer> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/tsl-ontology#Team> .
+<http://example.org/tsl-ontology#hasPlayer> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/tsl-ontology#Player> .
+<http://example.org/tsl-ontology#hasPlayer> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that a team has a specific player in its roster."@en .
+<http://example.org/tsl-ontology#hasPlayer> <http://www.w3.org/2000/01/rdf-schema#label> "has player"@en .
+# 
+# http://example.org/tsl-ontology#hasPosition
+<http://example.org/tsl-ontology#hasPosition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/tsl-ontology#hasPosition> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/tsl-ontology#Player> .
+<http://example.org/tsl-ontology#hasPosition> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/tsl-ontology#Position> .
+<http://example.org/tsl-ontology#hasPosition> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the playing position of a player on the field."@en .
+<http://example.org/tsl-ontology#hasPosition> <http://www.w3.org/2000/01/rdf-schema#label> "has position"@en .
+# 
+# http://example.org/tsl-ontology#homeStadium
+<http://example.org/tsl-ontology#homeStadium> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/tsl-ontology#homeStadium> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://example.org/tsl-ontology#homeStadium> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/tsl-ontology#Team> .
+<http://example.org/tsl-ontology#homeStadium> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/tsl-ontology#Stadium> .
+<http://example.org/tsl-ontology#homeStadium> <http://www.w3.org/2000/01/rdf-schema#comment> "The home stadium of a team."@en .
+<http://example.org/tsl-ontology#homeStadium> <http://www.w3.org/2000/01/rdf-schema#label> "home stadium"@en .
+# 
+# http://example.org/tsl-ontology#homeTeam
+<http://example.org/tsl-ontology#homeTeam> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/tsl-ontology#homeTeam> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://example.org/tsl-ontology#homeTeam> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/tsl-ontology#Match> .
+<http://example.org/tsl-ontology#homeTeam> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/tsl-ontology#Team> .
+<http://example.org/tsl-ontology#homeTeam> <http://www.w3.org/2000/01/rdf-schema#comment> "The team playing at home in a match."@en .
+<http://example.org/tsl-ontology#homeTeam> <http://www.w3.org/2000/01/rdf-schema#label> "home team"@en .
+# 
+# http://example.org/tsl-ontology#inSeason
+<http://example.org/tsl-ontology#inSeason> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/tsl-ontology#inSeason> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/tsl-ontology#Season> .
+<http://example.org/tsl-ontology#inSeason> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the season in which a match or transfer takes place."@en .
+<http://example.org/tsl-ontology#inSeason> <http://www.w3.org/2000/01/rdf-schema#label> "in season"@en .
+# 
+# http://example.org/tsl-ontology#managedBy
+<http://example.org/tsl-ontology#managedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/tsl-ontology#managedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/tsl-ontology#Team> .
+<http://example.org/tsl-ontology#managedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/tsl-ontology#Coach> .
+<http://example.org/tsl-ontology#managedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the head coach who manages a team in a given context."@en .
+<http://example.org/tsl-ontology#managedBy> <http://www.w3.org/2000/01/rdf-schema#label> "managed by"@en .
+# 
+# http://example.org/tsl-ontology#manages
+<http://example.org/tsl-ontology#manages> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/tsl-ontology#manages> <http://www.w3.org/2002/07/owl#inverseOf> <http://example.org/tsl-ontology#managedBy> .
+<http://example.org/tsl-ontology#manages> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/tsl-ontology#Coach> .
+<http://example.org/tsl-ontology#manages> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/tsl-ontology#Team> .
+<http://example.org/tsl-ontology#manages> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates which team a coach is managing."@en .
+<http://example.org/tsl-ontology#manages> <http://www.w3.org/2000/01/rdf-schema#label> "manages"@en .
+# 
+# http://example.org/tsl-ontology#playedAtStadium
+<http://example.org/tsl-ontology#playedAtStadium> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/tsl-ontology#playedAtStadium> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://example.org/tsl-ontology#playedAtStadium> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/tsl-ontology#Match> .
+<http://example.org/tsl-ontology#playedAtStadium> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/tsl-ontology#Stadium> .
+<http://example.org/tsl-ontology#playedAtStadium> <http://www.w3.org/2000/01/rdf-schema#comment> "The stadium where a match is played."@en .
+<http://example.org/tsl-ontology#playedAtStadium> <http://www.w3.org/2000/01/rdf-schema#label> "played at stadium"@en .
+# 
+# http://example.org/tsl-ontology#playsFor
+<http://example.org/tsl-ontology#playsFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/tsl-ontology#playsFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/tsl-ontology#Player> .
+<http://example.org/tsl-ontology#playsFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/tsl-ontology#Team> .
+<http://example.org/tsl-ontology#playsFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates which team a player is currently registered to play for."@en .
+<http://example.org/tsl-ontology#playsFor> <http://www.w3.org/2000/01/rdf-schema#label> "plays for"@en .
+# 
+# http://example.org/tsl-ontology#scoredBy
+<http://example.org/tsl-ontology#scoredBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/tsl-ontology#scoredBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://example.org/tsl-ontology#scoredBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/tsl-ontology#Goal> .
+<http://example.org/tsl-ontology#scoredBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/tsl-ontology#Player> .
+<http://example.org/tsl-ontology#scoredBy> <http://www.w3.org/2000/01/rdf-schema#comment> "The player who scored the goal."@en .
+<http://example.org/tsl-ontology#scoredBy> <http://www.w3.org/2000/01/rdf-schema#label> "scored by"@en .
+# 
+# http://example.org/tsl-ontology#seasonOfLeague
+<http://example.org/tsl-ontology#seasonOfLeague> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/tsl-ontology#seasonOfLeague> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/tsl-ontology#Season> .
+<http://example.org/tsl-ontology#seasonOfLeague> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/tsl-ontology#League> .
+<http://example.org/tsl-ontology#seasonOfLeague> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a season to the league it belongs to."@en .
+<http://example.org/tsl-ontology#seasonOfLeague> <http://www.w3.org/2000/01/rdf-schema#label> "season of league"@en .
+# 
+# http://example.org/tsl-ontology#standingSeason
+<http://example.org/tsl-ontology#standingSeason> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/tsl-ontology#standingSeason> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://example.org/tsl-ontology#standingSeason> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/tsl-ontology#Standing> .
+<http://example.org/tsl-ontology#standingSeason> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/tsl-ontology#Season> .
+<http://example.org/tsl-ontology#standingSeason> <http://www.w3.org/2000/01/rdf-schema#comment> "The season this standing record belongs to."@en .
+<http://example.org/tsl-ontology#standingSeason> <http://www.w3.org/2000/01/rdf-schema#label> "standing season"@en .
+# 
+# http://example.org/tsl-ontology#standingTeam
+<http://example.org/tsl-ontology#standingTeam> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/tsl-ontology#standingTeam> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://example.org/tsl-ontology#standingTeam> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/tsl-ontology#Standing> .
+<http://example.org/tsl-ontology#standingTeam> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/tsl-ontology#Team> .
+<http://example.org/tsl-ontology#standingTeam> <http://www.w3.org/2000/01/rdf-schema#comment> "The team this standing record belongs to."@en .
+<http://example.org/tsl-ontology#standingTeam> <http://www.w3.org/2000/01/rdf-schema#label> "standing team"@en .
+# 
+# http://example.org/tsl-ontology#transferPlayer
+<http://example.org/tsl-ontology#transferPlayer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/tsl-ontology#transferPlayer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://example.org/tsl-ontology#transferPlayer> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/tsl-ontology#Transfer> .
+<http://example.org/tsl-ontology#transferPlayer> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/tsl-ontology#Player> .
+<http://example.org/tsl-ontology#transferPlayer> <http://www.w3.org/2000/01/rdf-schema#comment> "The player who is being transferred."@en .
+<http://example.org/tsl-ontology#transferPlayer> <http://www.w3.org/2000/01/rdf-schema#label> "transfer player"@en .
+# 
+# http://example.org/tsl-ontology#transferredFrom
+<http://example.org/tsl-ontology#transferredFrom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/tsl-ontology#transferredFrom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://example.org/tsl-ontology#transferredFrom> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/tsl-ontology#Transfer> .
+<http://example.org/tsl-ontology#transferredFrom> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/tsl-ontology#Team> .
+<http://example.org/tsl-ontology#transferredFrom> <http://www.w3.org/2000/01/rdf-schema#comment> "The club that the player is leaving."@en .
+<http://example.org/tsl-ontology#transferredFrom> <http://www.w3.org/2000/01/rdf-schema#label> "transferred from"@en .
+# 
+# http://example.org/tsl-ontology#transferredTo
+<http://example.org/tsl-ontology#transferredTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/tsl-ontology#transferredTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://example.org/tsl-ontology#transferredTo> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/tsl-ontology#Transfer> .
+<http://example.org/tsl-ontology#transferredTo> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/tsl-ontology#Team> .
+<http://example.org/tsl-ontology#transferredTo> <http://www.w3.org/2000/01/rdf-schema#comment> "The club that the player is joining."@en .
+<http://example.org/tsl-ontology#transferredTo> <http://www.w3.org/2000/01/rdf-schema#label> "transferred to"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://example.org/tsl-ontology#awayScore
+<http://example.org/tsl-ontology#awayScore> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://example.org/tsl-ontology#awayScore> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://example.org/tsl-ontology#awayScore> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/tsl-ontology#Match> .
+<http://example.org/tsl-ontology#awayScore> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<http://example.org/tsl-ontology#awayScore> <http://www.w3.org/2000/01/rdf-schema#comment> "The number of goals scored by the away team."@en .
+<http://example.org/tsl-ontology#awayScore> <http://www.w3.org/2000/01/rdf-schema#label> "away score"@en .
+# 
+# http://example.org/tsl-ontology#birthDate
+<http://example.org/tsl-ontology#birthDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://example.org/tsl-ontology#birthDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://example.org/tsl-ontology#birthDate> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/tsl-ontology#Person> .
+<http://example.org/tsl-ontology#birthDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#date> .
+<http://example.org/tsl-ontology#birthDate> <http://www.w3.org/2000/01/rdf-schema#comment> "The date of birth of a person."@en .
+<http://example.org/tsl-ontology#birthDate> <http://www.w3.org/2000/01/rdf-schema#label> "birth date"@en .
+# 
+# http://example.org/tsl-ontology#cardMinute
+<http://example.org/tsl-ontology#cardMinute> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://example.org/tsl-ontology#cardMinute> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://example.org/tsl-ontology#cardMinute> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/tsl-ontology#Card> .
+<http://example.org/tsl-ontology#cardMinute> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<http://example.org/tsl-ontology#cardMinute> <http://www.w3.org/2000/01/rdf-schema#comment> "The minute of the match in which the card was shown."@en .
+<http://example.org/tsl-ontology#cardMinute> <http://www.w3.org/2000/01/rdf-schema#label> "card minute"@en .
+# 
+# http://example.org/tsl-ontology#cardReason
+<http://example.org/tsl-ontology#cardReason> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://example.org/tsl-ontology#cardReason> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://example.org/tsl-ontology#cardReason> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/tsl-ontology#Card> .
+<http://example.org/tsl-ontology#cardReason> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://example.org/tsl-ontology#cardReason> <http://www.w3.org/2000/01/rdf-schema#comment> "The reason for the card being shown (e.g., foul, unsporting behavior)."@en .
+<http://example.org/tsl-ontology#cardReason> <http://www.w3.org/2000/01/rdf-schema#label> "card reason"@en .
+# 
+# http://example.org/tsl-ontology#draws
+<http://example.org/tsl-ontology#draws> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://example.org/tsl-ontology#draws> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://example.org/tsl-ontology#draws> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/tsl-ontology#Standing> .
+<http://example.org/tsl-ontology#draws> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<http://example.org/tsl-ontology#draws> <http://www.w3.org/2000/01/rdf-schema#comment> "Number of matches drawn."@en .
+<http://example.org/tsl-ontology#draws> <http://www.w3.org/2000/01/rdf-schema#label> "draws"@en .
+# 
+# http://example.org/tsl-ontology#goalMinute
+<http://example.org/tsl-ontology#goalMinute> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://example.org/tsl-ontology#goalMinute> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://example.org/tsl-ontology#goalMinute> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/tsl-ontology#Goal> .
+<http://example.org/tsl-ontology#goalMinute> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<http://example.org/tsl-ontology#goalMinute> <http://www.w3.org/2000/01/rdf-schema#comment> "The minute of the match in which the goal was scored."@en .
+<http://example.org/tsl-ontology#goalMinute> <http://www.w3.org/2000/01/rdf-schema#label> "goal minute"@en .
+# 
+# http://example.org/tsl-ontology#goalsAgainst
+<http://example.org/tsl-ontology#goalsAgainst> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://example.org/tsl-ontology#goalsAgainst> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://example.org/tsl-ontology#goalsAgainst> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/tsl-ontology#Standing> .
+<http://example.org/tsl-ontology#goalsAgainst> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<http://example.org/tsl-ontology#goalsAgainst> <http://www.w3.org/2000/01/rdf-schema#comment> "Total goals conceded by the team in the season."@en .
+<http://example.org/tsl-ontology#goalsAgainst> <http://www.w3.org/2000/01/rdf-schema#label> "goals against"@en .
+# 
+# http://example.org/tsl-ontology#goalsFor
+<http://example.org/tsl-ontology#goalsFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://example.org/tsl-ontology#goalsFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://example.org/tsl-ontology#goalsFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/tsl-ontology#Standing> .
+<http://example.org/tsl-ontology#goalsFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<http://example.org/tsl-ontology#goalsFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Total goals scored by the team in the season."@en .
+<http://example.org/tsl-ontology#goalsFor> <http://www.w3.org/2000/01/rdf-schema#label> "goals for"@en .
+# 
+# http://example.org/tsl-ontology#homeScore
+<http://example.org/tsl-ontology#homeScore> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://example.org/tsl-ontology#homeScore> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://example.org/tsl-ontology#homeScore> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/tsl-ontology#Match> .
+<http://example.org/tsl-ontology#homeScore> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<http://example.org/tsl-ontology#homeScore> <http://www.w3.org/2000/01/rdf-schema#comment> "The number of goals scored by the home team."@en .
+<http://example.org/tsl-ontology#homeScore> <http://www.w3.org/2000/01/rdf-schema#label> "home score"@en .
+# 
+# http://example.org/tsl-ontology#isLoan
+<http://example.org/tsl-ontology#isLoan> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://example.org/tsl-ontology#isLoan> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://example.org/tsl-ontology#isLoan> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/tsl-ontology#Transfer> .
+<http://example.org/tsl-ontology#isLoan> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<http://example.org/tsl-ontology#isLoan> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates whether the transfer is a loan deal rather than a permanent transfer."@en .
+<http://example.org/tsl-ontology#isLoan> <http://www.w3.org/2000/01/rdf-schema#label> "is loan"@en .
+# 
+# http://example.org/tsl-ontology#isOwnGoal
+<http://example.org/tsl-ontology#isOwnGoal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://example.org/tsl-ontology#isOwnGoal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://example.org/tsl-ontology#isOwnGoal> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/tsl-ontology#Goal> .
+<http://example.org/tsl-ontology#isOwnGoal> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<http://example.org/tsl-ontology#isOwnGoal> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates whether the goal was an own goal."@en .
+<http://example.org/tsl-ontology#isOwnGoal> <http://www.w3.org/2000/01/rdf-schema#label> "is own goal"@en .
+# 
+# http://example.org/tsl-ontology#isPenalty
+<http://example.org/tsl-ontology#isPenalty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://example.org/tsl-ontology#isPenalty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://example.org/tsl-ontology#isPenalty> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/tsl-ontology#Goal> .
+<http://example.org/tsl-ontology#isPenalty> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<http://example.org/tsl-ontology#isPenalty> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates whether the goal was scored from a penalty kick."@en .
+<http://example.org/tsl-ontology#isPenalty> <http://www.w3.org/2000/01/rdf-schema#label> "is penalty"@en .
+# 
+# http://example.org/tsl-ontology#jerseyNumber
+<http://example.org/tsl-ontology#jerseyNumber> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://example.org/tsl-ontology#jerseyNumber> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://example.org/tsl-ontology#jerseyNumber> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/tsl-ontology#Player> .
+<http://example.org/tsl-ontology#jerseyNumber> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<http://example.org/tsl-ontology#jerseyNumber> <http://www.w3.org/2000/01/rdf-schema#comment> "The shirt number worn by a player."@en .
+<http://example.org/tsl-ontology#jerseyNumber> <http://www.w3.org/2000/01/rdf-schema#label> "jersey number"@en .
+# 
+# http://example.org/tsl-ontology#leagueCountry
+<http://example.org/tsl-ontology#leagueCountry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://example.org/tsl-ontology#leagueCountry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://example.org/tsl-ontology#leagueCountry> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/tsl-ontology#League> .
+<http://example.org/tsl-ontology#leagueCountry> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://example.org/tsl-ontology#leagueCountry> <http://www.w3.org/2000/01/rdf-schema#comment> "The country where the league is based."@en .
+<http://example.org/tsl-ontology#leagueCountry> <http://www.w3.org/2000/01/rdf-schema#label> "league country"@en .
+# 
+# http://example.org/tsl-ontology#losses
+<http://example.org/tsl-ontology#losses> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://example.org/tsl-ontology#losses> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://example.org/tsl-ontology#losses> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/tsl-ontology#Standing> .
+<http://example.org/tsl-ontology#losses> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<http://example.org/tsl-ontology#losses> <http://www.w3.org/2000/01/rdf-schema#comment> "Number of matches lost."@en .
+<http://example.org/tsl-ontology#losses> <http://www.w3.org/2000/01/rdf-schema#label> "losses"@en .
+# 
+# http://example.org/tsl-ontology#marketValue
+<http://example.org/tsl-ontology#marketValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://example.org/tsl-ontology#marketValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://example.org/tsl-ontology#marketValue> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/tsl-ontology#Player> .
+<http://example.org/tsl-ontology#marketValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/tsl-ontology#marketValue> <http://www.w3.org/2000/01/rdf-schema#comment> "The estimated market value of a player in euros."@en .
+<http://example.org/tsl-ontology#marketValue> <http://www.w3.org/2000/01/rdf-schema#label> "market value"@en .
+# 
+# http://example.org/tsl-ontology#matchDate
+<http://example.org/tsl-ontology#matchDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://example.org/tsl-ontology#matchDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://example.org/tsl-ontology#matchDate> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/tsl-ontology#Match> .
+<http://example.org/tsl-ontology#matchDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#date> .
+<http://example.org/tsl-ontology#matchDate> <http://www.w3.org/2000/01/rdf-schema#comment> "The date on which a match is played."@en .
+<http://example.org/tsl-ontology#matchDate> <http://www.w3.org/2000/01/rdf-schema#label> "match date"@en .
+# 
+# http://example.org/tsl-ontology#matchWeek
+<http://example.org/tsl-ontology#matchWeek> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://example.org/tsl-ontology#matchWeek> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://example.org/tsl-ontology#matchWeek> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/tsl-ontology#Match> .
+<http://example.org/tsl-ontology#matchWeek> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<http://example.org/tsl-ontology#matchWeek> <http://www.w3.org/2000/01/rdf-schema#comment> "The league week number (hafta) in which the match is played."@en .
+<http://example.org/tsl-ontology#matchWeek> <http://www.w3.org/2000/01/rdf-schema#label> "match week"@en .
+# 
+# http://example.org/tsl-ontology#nationality
+<http://example.org/tsl-ontology#nationality> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://example.org/tsl-ontology#nationality> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/tsl-ontology#Person> .
+<http://example.org/tsl-ontology#nationality> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://example.org/tsl-ontology#nationality> <http://www.w3.org/2000/01/rdf-schema#comment> "The nationality or country of citizenship of a person."@en .
+<http://example.org/tsl-ontology#nationality> <http://www.w3.org/2000/01/rdf-schema#label> "nationality"@en .
+# 
+# http://example.org/tsl-ontology#points
+<http://example.org/tsl-ontology#points> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://example.org/tsl-ontology#points> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://example.org/tsl-ontology#points> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/tsl-ontology#Standing> .
+<http://example.org/tsl-ontology#points> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<http://example.org/tsl-ontology#points> <http://www.w3.org/2000/01/rdf-schema#comment> "Total points accumulated in the season."@en .
+<http://example.org/tsl-ontology#points> <http://www.w3.org/2000/01/rdf-schema#label> "points"@en .
+# 
+# http://example.org/tsl-ontology#position
+<http://example.org/tsl-ontology#position> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://example.org/tsl-ontology#position> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://example.org/tsl-ontology#position> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/tsl-ontology#Standing> .
+<http://example.org/tsl-ontology#position> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<http://example.org/tsl-ontology#position> <http://www.w3.org/2000/01/rdf-schema#comment> "The final league position of the team (1 = champion)."@en .
+<http://example.org/tsl-ontology#position> <http://www.w3.org/2000/01/rdf-schema#label> "position"@en .
+# 
+# http://example.org/tsl-ontology#seasonYear
+<http://example.org/tsl-ontology#seasonYear> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://example.org/tsl-ontology#seasonYear> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://example.org/tsl-ontology#seasonYear> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/tsl-ontology#Season> .
+<http://example.org/tsl-ontology#seasonYear> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://example.org/tsl-ontology#seasonYear> <http://www.w3.org/2000/01/rdf-schema#comment> "The year or year range of the season (e.g., 2024-2025)."@en .
+<http://example.org/tsl-ontology#seasonYear> <http://www.w3.org/2000/01/rdf-schema#label> "season year"@en .
+# 
+# http://example.org/tsl-ontology#stadiumCapacity
+<http://example.org/tsl-ontology#stadiumCapacity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://example.org/tsl-ontology#stadiumCapacity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://example.org/tsl-ontology#stadiumCapacity> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/tsl-ontology#Stadium> .
+<http://example.org/tsl-ontology#stadiumCapacity> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<http://example.org/tsl-ontology#stadiumCapacity> <http://www.w3.org/2000/01/rdf-schema#comment> "The maximum seating capacity of a stadium."@en .
+<http://example.org/tsl-ontology#stadiumCapacity> <http://www.w3.org/2000/01/rdf-schema#label> "stadium capacity"@en .
+# 
+# http://example.org/tsl-ontology#stadiumCity
+<http://example.org/tsl-ontology#stadiumCity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://example.org/tsl-ontology#stadiumCity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://example.org/tsl-ontology#stadiumCity> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/tsl-ontology#Stadium> .
+<http://example.org/tsl-ontology#stadiumCity> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://example.org/tsl-ontology#stadiumCity> <http://www.w3.org/2000/01/rdf-schema#comment> "The city where the stadium is located."@en .
+<http://example.org/tsl-ontology#stadiumCity> <http://www.w3.org/2000/01/rdf-schema#label> "stadium city"@en .
+# 
+# http://example.org/tsl-ontology#transferDate
+<http://example.org/tsl-ontology#transferDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://example.org/tsl-ontology#transferDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://example.org/tsl-ontology#transferDate> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/tsl-ontology#Transfer> .
+<http://example.org/tsl-ontology#transferDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#date> .
+<http://example.org/tsl-ontology#transferDate> <http://www.w3.org/2000/01/rdf-schema#comment> "The date on which the transfer was completed."@en .
+<http://example.org/tsl-ontology#transferDate> <http://www.w3.org/2000/01/rdf-schema#label> "transfer date"@en .
+# 
+# http://example.org/tsl-ontology#transferFee
+<http://example.org/tsl-ontology#transferFee> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://example.org/tsl-ontology#transferFee> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://example.org/tsl-ontology#transferFee> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/tsl-ontology#Transfer> .
+<http://example.org/tsl-ontology#transferFee> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/tsl-ontology#transferFee> <http://www.w3.org/2000/01/rdf-schema#comment> "The transfer fee amount in euros."@en .
+<http://example.org/tsl-ontology#transferFee> <http://www.w3.org/2000/01/rdf-schema#label> "transfer fee"@en .
+# 
+# http://example.org/tsl-ontology#wins
+<http://example.org/tsl-ontology#wins> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://example.org/tsl-ontology#wins> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://example.org/tsl-ontology#wins> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/tsl-ontology#Standing> .
+<http://example.org/tsl-ontology#wins> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<http://example.org/tsl-ontology#wins> <http://www.w3.org/2000/01/rdf-schema#comment> "Number of matches won."@en .
+<http://example.org/tsl-ontology#wins> <http://www.w3.org/2000/01/rdf-schema#label> "wins"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://example.org/tsl-ontology#Card
+<http://example.org/tsl-ontology#Card> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://example.org/tsl-ontology#Card> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://example.org/tsl-ontology#MatchEvent> .
+<http://example.org/tsl-ontology#Card> <http://www.w3.org/2000/01/rdf-schema#comment> "A disciplinary card shown to a player by the referee during a match."@en .
+<http://example.org/tsl-ontology#Card> <http://www.w3.org/2000/01/rdf-schema#label> "Card"@en .
+# 
+# http://example.org/tsl-ontology#Coach
+<http://example.org/tsl-ontology#Coach> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://example.org/tsl-ontology#Coach> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://example.org/tsl-ontology#Person> .
+<http://example.org/tsl-ontology#Coach> <http://www.w3.org/2002/07/owl#disjointWith> <http://example.org/tsl-ontology#Player> .
+<http://example.org/tsl-ontology#Coach> <http://www.w3.org/2000/01/rdf-schema#comment> "A head coach or manager responsible for leading a team."@en .
+<http://example.org/tsl-ontology#Coach> <http://www.w3.org/2000/01/rdf-schema#label> "Coach"@en .
+# 
+# http://example.org/tsl-ontology#Defender
+<http://example.org/tsl-ontology#Defender> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://example.org/tsl-ontology#Defender> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://example.org/tsl-ontology#Position> .
+<http://example.org/tsl-ontology#Defender> <http://www.w3.org/2002/07/owl#disjointWith> <http://example.org/tsl-ontology#Forward> .
+<http://example.org/tsl-ontology#Defender> <http://www.w3.org/2002/07/owl#disjointWith> <http://example.org/tsl-ontology#Goalkeeper> .
+<http://example.org/tsl-ontology#Defender> <http://www.w3.org/2002/07/owl#disjointWith> <http://example.org/tsl-ontology#Midfielder> .
+<http://example.org/tsl-ontology#Defender> <http://www.w3.org/2000/01/rdf-schema#comment> "A player position focused on preventing the opposing team from scoring."@en .
+<http://example.org/tsl-ontology#Defender> <http://www.w3.org/2000/01/rdf-schema#label> "Defender"@en .
+# 
+# http://example.org/tsl-ontology#Forward
+<http://example.org/tsl-ontology#Forward> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://example.org/tsl-ontology#Forward> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://example.org/tsl-ontology#Position> .
+<http://example.org/tsl-ontology#Forward> <http://www.w3.org/2002/07/owl#disjointWith> <http://example.org/tsl-ontology#Goalkeeper> .
+<http://example.org/tsl-ontology#Forward> <http://www.w3.org/2002/07/owl#disjointWith> <http://example.org/tsl-ontology#Midfielder> .
+<http://example.org/tsl-ontology#Forward> <http://www.w3.org/2000/01/rdf-schema#comment> "A player position primarily responsible for scoring goals."@en .
+<http://example.org/tsl-ontology#Forward> <http://www.w3.org/2000/01/rdf-schema#label> "Forward"@en .
+# 
+# http://example.org/tsl-ontology#Goal
+<http://example.org/tsl-ontology#Goal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://example.org/tsl-ontology#Goal> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://example.org/tsl-ontology#MatchEvent> .
+<http://example.org/tsl-ontology#Goal> <http://www.w3.org/2000/01/rdf-schema#comment> "A goal scored by a player during a match."@en .
+<http://example.org/tsl-ontology#Goal> <http://www.w3.org/2000/01/rdf-schema#label> "Goal"@en .
+# 
+# http://example.org/tsl-ontology#Goalkeeper
+<http://example.org/tsl-ontology#Goalkeeper> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://example.org/tsl-ontology#Goalkeeper> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://example.org/tsl-ontology#Position> .
+<http://example.org/tsl-ontology#Goalkeeper> <http://www.w3.org/2002/07/owl#disjointWith> <http://example.org/tsl-ontology#Midfielder> .
+<http://example.org/tsl-ontology#Goalkeeper> <http://www.w3.org/2000/01/rdf-schema#comment> "The player position responsible for guarding the goal."@en .
+<http://example.org/tsl-ontology#Goalkeeper> <http://www.w3.org/2000/01/rdf-schema#label> "Goalkeeper"@en .
+# 
+# http://example.org/tsl-ontology#League
+<http://example.org/tsl-ontology#League> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://example.org/tsl-ontology#League> <http://www.w3.org/2000/01/rdf-schema#comment> "A professional football league organization that hosts competitive seasons."@en .
+<http://example.org/tsl-ontology#League> <http://www.w3.org/2000/01/rdf-schema#label> "League"@en .
+# 
+# http://example.org/tsl-ontology#Match
+<http://example.org/tsl-ontology#Match> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://example.org/tsl-ontology#Match> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/SportsEvent> .
+<http://schema.org/SportsEvent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://example.org/tsl-ontology#Match> <http://www.w3.org/2000/01/rdf-schema#comment> "A competitive football match played between two teams within a league season."@en .
+<http://example.org/tsl-ontology#Match> <http://www.w3.org/2000/01/rdf-schema#label> "Match"@en .
+# 
+# http://example.org/tsl-ontology#MatchEvent
+<http://example.org/tsl-ontology#MatchEvent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://example.org/tsl-ontology#MatchEvent> <http://www.w3.org/2000/01/rdf-schema#comment> "An event that occurs during a football match, such as a goal or a card."@en .
+<http://example.org/tsl-ontology#MatchEvent> <http://www.w3.org/2000/01/rdf-schema#label> "Match Event"@en .
+# 
+# http://example.org/tsl-ontology#Midfielder
+<http://example.org/tsl-ontology#Midfielder> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://example.org/tsl-ontology#Midfielder> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://example.org/tsl-ontology#Position> .
+<http://example.org/tsl-ontology#Midfielder> <http://www.w3.org/2000/01/rdf-schema#comment> "A player position that operates in the middle of the field, linking defense and attack."@en .
+<http://example.org/tsl-ontology#Midfielder> <http://www.w3.org/2000/01/rdf-schema#label> "Midfielder"@en .
+# 
+# http://example.org/tsl-ontology#Person
+<http://example.org/tsl-ontology#Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://example.org/tsl-ontology#Person> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://xmlns.com/foaf/0.1/Person> .
+<http://xmlns.com/foaf/0.1/Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://example.org/tsl-ontology#Person> <http://www.w3.org/2000/01/rdf-schema#comment> "A human individual involved in professional football."@en .
+<http://example.org/tsl-ontology#Person> <http://www.w3.org/2000/01/rdf-schema#label> "Person"@en .
+# 
+# http://example.org/tsl-ontology#Player
+<http://example.org/tsl-ontology#Player> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://example.org/tsl-ontology#Player> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://example.org/tsl-ontology#Person> .
+<http://example.org/tsl-ontology#Player> <http://www.w3.org/2000/01/rdf-schema#comment> "A professional football player who is registered to play for a team."@en .
+<http://example.org/tsl-ontology#Player> <http://www.w3.org/2000/01/rdf-schema#label> "Player"@en .
+# 
+# http://example.org/tsl-ontology#Position
+<http://example.org/tsl-ontology#Position> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://example.org/tsl-ontology#Position> <http://www.w3.org/2000/01/rdf-schema#comment> "A playing position on the football field."@en .
+<http://example.org/tsl-ontology#Position> <http://www.w3.org/2000/01/rdf-schema#label> "Position"@en .
+# 
+# http://example.org/tsl-ontology#RedCard
+<http://example.org/tsl-ontology#RedCard> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://example.org/tsl-ontology#RedCard> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://example.org/tsl-ontology#Card> .
+<http://example.org/tsl-ontology#RedCard> <http://www.w3.org/2002/07/owl#disjointWith> <http://example.org/tsl-ontology#YellowCard> .
+<http://example.org/tsl-ontology#RedCard> <http://www.w3.org/2000/01/rdf-schema#comment> "A dismissal card shown to a player, resulting in ejection from the match."@en .
+<http://example.org/tsl-ontology#RedCard> <http://www.w3.org/2000/01/rdf-schema#label> "Red Card"@en .
+# 
+# http://example.org/tsl-ontology#Season
+<http://example.org/tsl-ontology#Season> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://example.org/tsl-ontology#Season> <http://www.w3.org/2000/01/rdf-schema#comment> "A specific competitive season within a league, typically spanning one year (e.g., 2024-2025)."@en .
+<http://example.org/tsl-ontology#Season> <http://www.w3.org/2000/01/rdf-schema#label> "Season"@en .
+# 
+# http://example.org/tsl-ontology#Stadium
+<http://example.org/tsl-ontology#Stadium> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://example.org/tsl-ontology#Stadium> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/StadiumOrArena> .
+<http://schema.org/StadiumOrArena> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://example.org/tsl-ontology#Stadium> <http://www.w3.org/2000/01/rdf-schema#comment> "A sports venue where football matches are played."@en .
+<http://example.org/tsl-ontology#Stadium> <http://www.w3.org/2000/01/rdf-schema#label> "Stadium"@en .
+# 
+# http://example.org/tsl-ontology#Standing
+<http://example.org/tsl-ontology#Standing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://example.org/tsl-ontology#Standing> <http://www.w3.org/2000/01/rdf-schema#comment> "A team's position and statistics in the league standings for a specific season."@en .
+<http://example.org/tsl-ontology#Standing> <http://www.w3.org/2000/01/rdf-schema#label> "Standing"@en .
+# 
+# http://example.org/tsl-ontology#Team
+<http://example.org/tsl-ontology#Team> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://example.org/tsl-ontology#Team> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/SportsTeam> .
+<http://schema.org/SportsTeam> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://example.org/tsl-ontology#Team> <http://www.w3.org/2000/01/rdf-schema#comment> "A professional football club that participates in a league."@en .
+<http://example.org/tsl-ontology#Team> <http://www.w3.org/2000/01/rdf-schema#label> "Team"@en .
+# 
+# http://example.org/tsl-ontology#Transfer
+<http://example.org/tsl-ontology#Transfer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://example.org/tsl-ontology#Transfer> <http://www.w3.org/2000/01/rdf-schema#comment> "A player transfer transaction between two clubs, recording the movement of a player from one team to another."@en .
+<http://example.org/tsl-ontology#Transfer> <http://www.w3.org/2000/01/rdf-schema#label> "Transfer"@en .
+# 
+# http://example.org/tsl-ontology#YellowCard
+<http://example.org/tsl-ontology#YellowCard> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://example.org/tsl-ontology#YellowCard> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://example.org/tsl-ontology#Card> .
+<http://example.org/tsl-ontology#YellowCard> <http://www.w3.org/2000/01/rdf-schema#comment> "A caution card shown to a player for a minor foul or unsporting behavior."@en .
+<http://example.org/tsl-ontology#YellowCard> <http://www.w3.org/2000/01/rdf-schema#label> "Yellow Card"@en .
+# 
+# http://schema.org/SportsEvent
+# 
+# http://schema.org/SportsTeam
+# 
+# http://schema.org/StadiumOrArena
+# 
+# http://xmlns.com/foaf/0.1/Person
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://example.org/tsl-ontology#defender_position
+<http://example.org/tsl-ontology#defender_position> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/tsl-ontology#defender_position> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/tsl-ontology#Defender> .
+<http://example.org/tsl-ontology#defender_position> <http://www.w3.org/2000/01/rdf-schema#comment> "The defender position."@en .
+<http://example.org/tsl-ontology#defender_position> <http://www.w3.org/2000/01/rdf-schema#label> "Defender"@en .
+# 
+# http://example.org/tsl-ontology#forward_position
+<http://example.org/tsl-ontology#forward_position> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/tsl-ontology#forward_position> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/tsl-ontology#Forward> .
+<http://example.org/tsl-ontology#forward_position> <http://www.w3.org/2000/01/rdf-schema#comment> "The forward position."@en .
+<http://example.org/tsl-ontology#forward_position> <http://www.w3.org/2000/01/rdf-schema#label> "Forward"@en .
+# 
+# http://example.org/tsl-ontology#goalkeeper_position
+<http://example.org/tsl-ontology#goalkeeper_position> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/tsl-ontology#goalkeeper_position> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/tsl-ontology#Goalkeeper> .
+<http://example.org/tsl-ontology#goalkeeper_position> <http://www.w3.org/2000/01/rdf-schema#comment> "The goalkeeper position."@en .
+<http://example.org/tsl-ontology#goalkeeper_position> <http://www.w3.org/2000/01/rdf-schema#label> "Goalkeeper"@en .
+# 
+# http://example.org/tsl-ontology#midfielder_position
+<http://example.org/tsl-ontology#midfielder_position> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/tsl-ontology#midfielder_position> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/tsl-ontology#Midfielder> .
+<http://example.org/tsl-ontology#midfielder_position> <http://www.w3.org/2000/01/rdf-schema#comment> "The midfielder position."@en .
+<http://example.org/tsl-ontology#midfielder_position> <http://www.w3.org/2000/01/rdf-schema#label> "Midfielder"@en .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
